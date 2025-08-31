@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propósito del Sistema | HelpQuick</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+      .info-flex {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1100px;
+        margin: 40px auto 40px auto;
+        background: #fffde7;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(211,47,47,0.10);
+        padding: 32px;
+        gap: 32px;
+      }
+      .info-text {
+        flex: 2 1 350px;
+        min-width: 280px;
+      }
+      .info-img {
+        flex: 1 1 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .info-img img {
+        max-width: 320px;
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(211,47,47,0.15);
+        object-fit: cover;
+      }
+      @media (max-width: 900px) {
+        .info-flex {
+          flex-direction: column;
+          padding: 20px;
+        }
+        .info-img {
+          margin-top: 20px;
+        }
+      }
+      .body{
+        background-color: #faf087;
+      }
+    </style>
+</head>
+<body>
+    <!-- Barra principal -->
+    <div class="main-bar">
+        <div>
+            
+        </div>
+        <div class="search">
+            <button class="btn-search">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+        <div class="container-fluid" >
+          <a class="navbar-brand" href="main.html">
+            <img src="../Imagenes/goro2.jpg" width="60" height="30" alt="Logo" ><a href="main.html"></a>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+      
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="introDropdown" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+                  Introducción y Contexto del Sistema
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="introDropdown">
+                  <li><a class="dropdown-item" href="Proposito.html">1.1 Propósito del Sistema</a></li>
+                  <li><a class="dropdown-item" href="Alcance.html">1.2 Alcance y Restricciones del Sistema</a></li>
+                </ul>
+              </li>
+      
+              
+              <li class="nav-item">
+                <a class="nav-link" href="involucrados.html" style="text-align: center">Involucrados y Preocupaciones</a>
+              </li>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="designDropdown" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+                  Diseño Arquitectónico
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="designDropdown">
+                  <li><a class="dropdown-item" href="Relacion.html">3.1 Racional Arquitectónico</a></li>
+                  <li><a class="dropdown-item" href="Vistas.html">3.2 Vistas Arquitectónicas </a></li>
+                </ul>
+              </li>
+      
+               <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="implementationDropdown" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+                  Implementación y Verificación
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="implementationDropdown">
+                  <li><a class="dropdown-item" href="Apli.html">4.1 Aplicación de Patrones de Diseño</a></li>
+                  <li><a class="dropdown-item" href="Atri.html">4.2 Atributos de Calidad y Compromisos</a></li>
+                  <li><a class="dropdown-item" href="Revi.html">4.3 Revisiones de la Arquitectura</a></li>
+                </ul>
+              </li>
+      
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="CorresDropdown" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+                  Correspondencia de la Implementación
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="CorresDropdown">
+                  <li><a class="dropdown-item" href="Vinculacion.html">5.1 Vinculación de Componentes</a></li>
+                  <li><a class="dropdown-item" href="Patrones.html">5.2 Aplicación de Patrones en el Código</a></li>
+                </ul>
+              </li>
+      
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="MantenimientoDropdown" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+                  Mantenimiento y Evolución
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="MantenimientoDropdown">
+                  <li><a class="dropdown-item" href="Pers.html">6.1 Perspectivas de Evolución Futura</a></li>
+                </ul>
+              </li>
+      
+             <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="ReferenciasDropdown" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+                  Referencias y Apéndices
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="ReferenciasDropdown">
+                  <li><a class="dropdown-item" href="Glosario.html">7.1 Glosario</a></li>
+                  <li><a class="dropdown-item" href="Referencias.html">7.2 Referencias</a></li>
+                </ul>
+              </li>
+          
+            </ul>
+            
+          </div>
+          
+        </div>
+        
+      </nav>
+
+    <!-- Título principal -->
+    <div class="hero-section">
+        <h1>1.1 Propósito del Sistema</h1>
+    </div>
+
+    <!-- Bloque de información en dos columnas -->
+    <div class="info-flex">
+      <div class="info-text">
+        <h3 style="color:#d32f2f;"><b>Meta principal del software</b></h3>
+        <p>
+            El objetivo central es desarrollar una aplicación de primeros auxilios efectiva y accesible que permita a cualquier persona
+            aprender y aplicar conocimientos básicos en situaciones de emergencia. Busca mejorar la capacidad de respuesta inmediata,
+            salvar vidas y promover una cultura de seguridad y solidaridad en la comunidad.
+        </p>
+        <h3 style="color:#d32f2f;"><b>Funciones principales del software</b></h3>
+        <p><b>1. Gestión de información de emergencias:</b> incidentes, síntomas, diagnósticos, atenciones, transporte, hospitales, registros, etc.</p>
+        <p><b>2. Guías paso a paso:</b> instrucciones claras para aplicar técnicas de primeros auxilios como RCP o la maniobra de Heimlich.</p>
+        <p><b>3. Consultas rápidas:</b> búsqueda de información sobre procedimientos, síntomas y tipos de accidentes.</p>
+        <p><b>4. Generación de informes:</b>
+            <ul>
+                <li>Síntomas más frecuentes.</li>
+                <li>Incidentes más comunes.</li>
+                <li>Ciudades con mayor número de accidentes.</li>
+                <li>Resumen de sucesos registrados.</li>
+            </ul>
+        </p>
+        <p><b>5. Registro de usuarios y roles:</b> administrador, personal de la salud y usuario general.</p>
+        <p><b>6. Soporte educativo:</b> documentación y capacitación para que los usuarios aprendan a usar la aplicación.</p>
+        <h3 style="color:#d32f2f;"><b>A quién sirve</b></h3>
+        <p><b>Usuarios generales:</b> cualquier persona que necesite orientación inmediata en primeros auxilios.</p>
+        <p><b>Personal de la salud:</b> pueden agregar, actualizar y consultar información médica.</p>
+        <p><b>Administradores:</b> gestionan la aplicación, usuarios y el mantenimiento general del sistema.</p>
+      </div>
+      <div class="info-img">
+        <img src="../Imagenes/2150995021.jpg" alt="Propósito del Sistema">
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
