@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vistas Arquitectónicas| HelpQuick</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+      .info-flex {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1100px;
+        margin: 40px auto 40px auto;
+        background: #fffde7;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(211,47,47,0.10);
+        padding: 32px;
+        gap: 32px;
+      }
+      .info-text {
+        flex: 2 1 350px;
+        min-width: 280px;
+      }
+      .info-img {
+        flex: 1 1 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .info-img img {
+        max-width: 320px;
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(211,47,47,0.15);
+        object-fit: cover;
+      }
+      @media (max-width: 900px) {
+        .info-flex {
+          flex-direction: column;
+          padding: 20px;
+        }
+        .info-img {
+          margin-top: 20px;
+        }
+      }
+      .body{
+        background-color: #faf087;
+      }
+      .adr-card {
+      background: #ffffff;
+      border-left: 5px solid #d32f2f;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .adr-card h5 {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+     <!-- Barra principal -->
+    <div class="main-bar">
+        <div>
+            
+        </div>
+        <div class="search">
+            <button class="btn-search">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </div>
+    <!-- Navegación -->
+ <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">
+      <img src="../Imagenes/goro2.jpg" width="60" height="30" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="introDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+            Introducción y Contexto del Sistema
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="introDropdown">
+            <li><a class="dropdown-item" href="Proposito.html">1.1 Propósito del Sistema</a></li>
+            <li><a class="dropdown-item" href="Alcance.html">1.2 Alcance y Restricciones del Sistema</a></li>
+          </ul>
+        </li>
+
+        
+        <li class="nav-item">
+          <a class="nav-link" href="involucrados.html" style="text-align: center">Involucrados y Preocupaciones</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="designDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+            Diseño Arquitectónico
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="designDropdown">
+            <li><a class="dropdown-item" href="Relacion.html">3.1 Racional Arquitectónico</a></li>
+            <li><a class="dropdown-item" href="Vistas.html">3.2 Vistas Arquitectónicas </a></li>
+          </ul>
+        </li>
+
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="implementationDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+            Implementación y Verificación
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="implementationDropdown">
+            <li><a class="dropdown-item" href="Apli.html">4.1 Aplicación de Patrones de Diseño</a></li>
+            <li><a class="dropdown-item" href="Atri.html">4.2 Atributos de Calidad y Compromisos</a></li>
+            <li><a class="dropdown-item" href="Revi.html">4.3 Revisiones de la Arquitectura</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="CorresDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+            Correspondencia de la Implementación
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="CorresDropdown">
+            <li><a class="dropdown-item" href="Vinculacion.html">5.1 Vinculación de Componentes</a></li>
+            <li><a class="dropdown-item" href="Patrones.html">5.2 Aplicación de Patrones en el Código</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="MantenimientoDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+            Mantenimiento y Evolución
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="MantenimientoDropdown">
+            <li><a class="dropdown-item" href="Pers.html">6.1 Perspectivas de Evolución Futura</a></li>
+          </ul>
+        </li>
+
+       <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="ReferenciasDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+            Referencias y Apéndices
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="ReferenciasDropdown">
+            <li><a class="dropdown-item" href="Glosario.html">7.1 Glosario</a></li>
+            <li><a class="dropdown-item" href="Referencias.html">7.2 Referencias</a></li>
+          </ul>
+        </li>
+    
+      </ul>
+      
+    </div>
+    
+  </div>
+  
+</nav>
+
+ 
+
+    <!-- Decisiones Arquitectónicas -->
+    
+        <div class="hero-section">
+            <h1>3.2 Vistas Arquitectónicas</h1>
+        </div>
+      <div class="info-flex">
+        <div class="info-text">
+        <!-- Card 1 -->
+         <h3 style="color:#d32f2f;"><b>DECISIONES ARQUITECTONICAS</b></h3>
+        <div>
+          <h4>1: Seguridad en el acceso a la BD</h4>
+          <p><strong>Contexto:</strong> El sistema manejará datos sensibles de clientes, proveedores e inventario, 
+            por lo que se requiere proteger la información contra accesos no autorizados.</p>
+          <p><strong>Decisión:</strong>Se definió que solo la capa de negocio tendrá acceso directo a la base de datos (MySQL),
+             utilizando credenciales encriptadas y evitando el acceso desde la capa de presentación.</p>
+          <p><strong>Consecuencias:</strong> 
+            <ul>
+                <li>Positivo: Aumenta la seguridad, evita fugas de información. </li>
+                <li>Negativo: Puede dificultar pruebas rápidas desde el cliente si no hay acceso directo a BD. </li>
+            </ul>
+        </p>
+        </div>
+        <!-- Card 2 -->
+        <div >
+          <h4>2: Autenticación y manejo de usuarios</h4>
+          <p><strong>Contexto:</strong> Se identificó la necesidad de diferenciar roles (administrador, mecánico, cliente) 
+            para limitar accesos según el perfil.</p>
+          <p><strong>Decisión:</strong> Implementar un sistema de autenticación con roles y permisos, 
+            donde el administrador gestiona usuarios y privilegios.</p>
+          <p><strong>Consecuencias:</strong> 
+            <ul>
+                <li>Positivo: Previene que un usuario sin permisos acceda a funciones críticas (ej. eliminar inventario).</li>
+                <li>Negativo:  Aumenta la complejidad de desarrollo y mantenimiento de roles. </li>
+            </ul></p>
+        </div>
+        <!-- Card 3 -->
+        <div>
+          <h4>3: Rendimiento en consultas</h4>
+          <p><strong>Contexto:</strong> El sistema debe consultar inventario y diagnósticos en tiempo real, 
+            incluso con grandes volúmenes de datos.</p>
+          <p><strong>Decisión:</strong> Optimizar la base de datos con índices en campos de búsqueda frecuentes 
+            (ejemplo: código de repuesto, placa de la moto, fecha de diagnóstico).</p>
+          <p><strong>Consecuencias:</strong> 
+            <ul>
+                <li>Positivo: Mejora la velocidad de búsqueda y reduce tiempos de respuesta.</li>
+                <li>Negativo:  Mayor espacio en disco y mantenimiento de índices al modificar registros.  </li>
+            </ul></p>
+        </div>
+        <!-- Card 4 -->
+        <div >
+          <h4>4: Escalabilidad con microservicio de IA</h4>
+          <p><strong>Contexto:</strong>Se requiere un módulo de IA de diagnóstico que podría crecer de forma independiente en el futuro.</p>
+          <p><strong>Decisión:</strong> Desplegar la IA como un microservicio independiente que se comunica vía API con el sistema principal.</p>
+          <p><strong>Consecuencias:</strong>
+            <ul>
+                <li>Positivo: Escalable, se puede mejorar la IA sin afectar el resto del sistema. </li>
+                <li>Negativo: Negativo: Incrementa la complejidad de despliegue y requiere asegurar la comunicación entre servicios.  </li>
+            </ul></p>
+        </div>
+        <!-- Card 5 -->
+        <div >
+          <h4>5: Mantenibilidad con arquitectura por capas</h4>
+          <p><strong>Contexto:</strong>Se busca que el sistema sea fácil de mantener y extender con nuevas funciones 
+            (reportes, nuevos tipos de diagnósticos). </p>
+          <p><strong>Decisión:</strong> Adoptar una arquitectura por capas (presentación, negocio, datos) 
+            separando responsabilidades y facilitando pruebas unitarias.</p>
+          <p><strong>Consecuencias:</strong> 
+            <ul>
+                <li>Positivo: Facilita mantenimiento, reduce impacto de cambios.</li>
+                <li>Negativo: Puede aumentar la cantidad de código inicial y la curva de aprendizaje.</li>
+            </ul></p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="info-flex">
+        <div class="info-text">
+    <!-- Diagramas con descripción -->
+    
+      <h3 style="color:#d32f2f;"><b>DESCRIPCIONES ARQUITECTONICAS </b></h3>
+      <div class="space-y-6">
+        <div class="adr-card">
+          <h3 class="font-bold">Incidentes</h3>
+          <p>Esta imagen nos muestra como incidentes se encarga de registrar, actualizar y consultar los eventos relacionados con emergencias o situaciones médicas reportadas.
+            Permitiendo así asociar datos clave como síntomas, 
+            lugar de ocurrencia, paciente involucrado y atención recibida, garantizando trazabilidad en todo el proceso. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/Incidentes.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card" >
+          <h3 class="font-bold">Clasificación de incidentes</h3>
+          <p>Nos muestra como se clasifica y organiza los distintos tipos de incidentes que pueden ocurrir, facilitando la identificación, 
+            categorización y análisis posterior de patrones o estadísticas de emergencias. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/T_incidente.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card" >
+          <h3 class="font-bold">Signos clínicos</h3>
+          <p>Permite registrar y consultar los signos clínicos reportados por los pacientes o identificados por el personal de salud, 
+            funcionando como base para diagnósticos y predicciones. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/sintomas.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Categoría de síntomas</h3>
+          <p>La imagen muestra cómo se organiza y categoriza los diferentes síntomas posibles, asegurando que la información registrada sea uniforme y 
+            estandarizada para análisis médicos posteriores. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/T_sintoma.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Acciones del personal de salud</h3>
+          <p>Nos muestra cómo se gestiona las acciones realizadas por el personal de salud frente a un incidente o consulta, incluyendo primeros auxilios, 
+            tratamientos aplicados y derivaciones a centros médicos. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/atencion.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Modalidades de atención</h3>
+          <p>Se define y clasifica las modalidades de atención médica prestada, tales como atención en sitio, hospitalaria o remota, 
+            facilitando la estandarización del proceso asistencial. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/T_atencion.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card"> >
+          <h3 class="font-bold">Pacientes</h3>
+          <p>El diagrama nos muestra cómo se administra la información personal y médica de cada individuo atendido en el sistema, 
+            incluyendo historial clínico, antecedentes y contactos de emergencia. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/pacinete.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card"> >
+          <h3 class="font-bold">Clasificación de usuarios</h3>
+          <p>Se puede observar la clasificación de los usuarios del sistema según criterios médicos o administrativos 
+            (ej. adultos, niños, afiliados, no afiliados), optimizando la gestión de casos y estadísticas. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/T_paciente.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Valoraciones clínicas</h3>
+          <p>Permite registrar las primeras valoraciones clínicas realizadas por el personal de salud o el sistema antes de un diagnóstico completo, 
+            agilizando la atención inicial. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/prediagnostico.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Resultados clínicos</h3>
+          <p>Administra los resultados clínicos finales basados en los síntomas, antecedentes y pruebas médicas, 
+            aportando información clave para la atención y el seguimiento del paciente. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/diagnostico.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Personal de salud</h3>
+          <p>Se puede observar cómo se gestiona la información de los trabajadores del sistema de salud 
+            (médicos, enfermeros, técnicos), incluyendo roles, turnos y asignaciones. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/personal.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Perfiles del personal</h3>
+          <p>La imagen muestra cómo se clasifica los diferentes perfiles dentro del personal de salud,
+            facilitando la organización de responsabilidades y la correcta asignación de funciones. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/T_personal.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Medios de traslado</h3>
+          <p>Administra los medios de traslado utilizados para movilizar pacientes o recursos médicos en caso de incidentes, 
+            incluyendo disponibilidad, rutas y tiempos de respuesta. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/transporte.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Clasificación de transporte</h3>
+          <p>Se puede visualizar como se categoriza los distintos medios de transporte (ambulancia, helicóptero, vehículo particular),
+            garantizando un registro organizado y útil para la logística de emergencias. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/T_transporte.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Centros médicos</h3>
+          <p>Centraliza la información de los centros médicos disponibles, su capacidad, ubicación y servicios prestados, 
+            permitiendo referencias rápidas y coordinadas durante una emergencia. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/hospital.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Clasificación de instituciones</h3>
+          <p>Clasifica las instituciones médicas según su nivel de atención (básico, especializado, de alta complejidad),
+             facilitando la asignación correcta de pacientes. </p>
+             <div class="info-text">
+            
+                <img src="../Imagenes/T_hospital.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Datos históricos</h3>
+          <p>Se encarga de almacenar de forma sistemática todos los datos ingresados en el sistema, desde incidentes hasta diagnósticos, 
+            garantizando trazabilidad y acceso a la información histórica. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/registro.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Gestión de accesos</h3>
+          <p>Se gestiona el acceso y seguimiento de incidentes, sitios de atención y registros de sucesos, 
+            permitiendo búsquedas rápidas y eficientes por parte de usuarios y personal de salud. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/gestion_consulta.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Reportes</h3>
+          <p>Se genera reportes consolidados sobre síntomas frecuentes, incidentes recurrentes y estadísticas de sucesos, 
+            aportando información útil para la toma de decisiones y prevención. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/gestion_informe.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Privilegios de usuarios</h3>
+          <p>Administra las configuraciones y privilegios asociados a cada tipo de perfil de usuario, 
+            garantizando que cada rol solo acceda a las funciones que le corresponden. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/administrador_perfil.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+        <div class="adr-card">
+          <h3 class="font-bold">Gestión de cuentas</h3>
+          <p>Gestiona las cuentas de acceso de los distintos usuarios del sistema, controlando autenticación, 
+            roles y permisos para proteger la información sensible. </p>
+            <div class="info-text">
+            
+                <img src="../Imagenes/administrador_usuario.png" width="500" height="300" alt="Diagrama de Componentes">
+            
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    
+
+    <!-- Despliegue -->
+    <div class="info-flex">
+        <div class="info-text">
+            <h2 style="color:#d32f2f;">Diagrama de Componentes</h2>
+            <img src="../Imagenes/diagrama_componentes.jpg" width="500" height="300" alt="Diagrama de Componentes">
+        </div>
+    </div>
+
+    <div class="info-flex">
+        <div class="info-text">
+            <h2 style="color:#d32f2f;">Diagrama UML de Despliegue</h2>
+            <img src="../Imagenes/UML.png" width="500" height="300" alt="Diagrama de Componentes">
+        </div>
+    </div>
+
+    <div class="info-flex">
+        <div class="info-text">
+            <div>
+                <h3 style="color:#d32f2f;">Nodos identificados</h3>
+                <ul>
+                    <p><strong>1. Cliente:</strong> 
+                            <li>Aplicación web en el PC de escritorio. </li>
+                            <li>Se conecta al servidor mediante protocolo HTTPS. </li>
+                            <li>Requiere navegador web actualizado.  </li>
+                        </p>
+                    <p><strong>2. Servidor de Aplicaciones :</strong> 
+                        
+                            <li>Implementado en Java.  </li>
+                            <li>Contiene la lógica de negocio (gestión de incidentes, síntomas, pacientes, registros, etc.).  </li>
+                            <li>Expone servicios REST/HTTP para que el cliente consuma.   </li>
+                        </p>
+                    <p><strong>3. Base de Datos :</strong> 
+                        
+                            <li>MySQL como gestor de datos.  </li>
+                            <li>Contiene todas las tablas que ya tienes modeladas (Incidente, Paciente, Personal, Registro, Diagnóstico, etc.).  </li>
+                            <li>El servidor de aplicaciones se conecta a la BD a través de un driver JDBC.   </li>
+                        </p>
+                    <p><strong>4. Servicio IA (Opcional) :</strong> 
+                        
+                            <li>Microservicio externo que se puede integrar (ej. para clasificación automática de síntomas o predicción de diagnósticos).  </li>
+                            <li>Puede ejecutarse en un contenedor independiente (Docker/Kubernetes).  </li>
+                            <li>El servidor de aplicaciones envía datos y recibe la respuesta procesada.  </li>
+                    </p>
+                        <p>
+                            <strong>Explicación de Conexiones y Restricciones :</strong> 
+                        </p>
+                    <li>
+                        
+                        <b>Cliente → Servidor de Aplicaciones </b> 
+                        <ul>
+                            <li>Comunicación vía HTTPS para garantizar seguridad. </li>
+                            <li>Autenticación de usuarios (roles: administrador, personal de salud, usuario). </li>                
+                        </ul>
+                    </li>
+                    <li>
+                        
+                        <b>Servidor de Aplicaciones → Base de Datos  </b> 
+                        <ul>
+                            <li>Conexión mediante JDBC/MySQL.  </li>
+                            <li>Restricción: la conexión debe estar protegida con usuario/contraseña cifrados y se recomienda firewall para que solo el servidor acceda a la BD.  </li>                
+                            <li>Integridad de datos garantizada mediante transacciones.  </li>                
+                        </ul>
+                    </li>
+                    <li>
+                        
+                        <b>Servidor de Aplicaciones → Servicio IA  </b> 
+                        <ul>
+                            <li>Comunicación vía API REST o gRPC.  </li>
+                            <li>Restricción: uso de tokens de autenticación para consumir el microservicio.  </li>                
+                            <li>Opcional, por lo que el sistema debe seguir funcionando, aunque no esté disponible.  </li>                
+                        </ul>
+                    </li>
+                    <li>
+                        
+                        <b>Base de Datos  </b> 
+                        <ul>
+                            <li>Restringir acceso directo de los clientes finales (nunca deben conectarse a la BD).  </li>
+                            <li>Copias de seguridad periódicas.  </li>                
+                            <li>Control de concurrencia para múltiples usuarios.  </li>                
+                        </ul>
+                    </li>
+                </ul>
+                <img src="../Imagenes/servicio.png" width="500" height="300" alt="Diagrama de Componentes">
+            </div>
+      </div>
+    </div>
+    
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
