@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vistas Arquitectónicas| HelpQuick</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+       body {
+        background-color: #fffde7;
+        font-family: Arial, sans-serif;
+      }
+        .navbar-nav .nav-link {
+          white-space: normal;; /* evita que el texto se divida en varias líneas */
+          text-align: center;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+    
+      .sidebar {
+        position: fixed;
+        top: 126px;
+        left: 1290px;
+        width: 220px;
+        max-height: 80vh;   /* la barra nunca será más alta que el 80% de la ventana */
+        overflow-y: auto;   /* activa scroll vertical si hay mucho contenido */
+        background: #fffde3;
+        border: 2px solid #d32f2f;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        z-index: 1000;
+      }
+     .sidebar h5 {
+      color: #d32f2f;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 8px;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .sidebar ul li a:hover {
+      color: #d32f2f;
+    }
+
+    /* Scroll suave */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Contenido con margen para que no choque con la barra */
+    .content {
+      margin-left: 280px;
+      padding: 20px;
+    }
+      .info-flex {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1100px;
+        margin: 40px auto 40px auto;
+        background: #fff7b0;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(211,47,47,0.10);
+        padding: 32px;
+        gap: 32px;
+      }
+      .info-text {
+        flex: 2 1 350px;
+        min-width: 280px;
+      }
+      .info-img {
+        flex: 1 1 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .info-img img {
+        max-width: 320px;
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(211,47,47,0.15);
+        object-fit: cover;
+      }
+      @media (max-width: 900px) {
+        .info-flex {
+          flex-direction: column;
+          padding: 20px;
+        }
+        .info-img {
+          margin-top: 20px;
+        }
+      }
+      .body{
+        background-color: #f7f1b4;
+      }
+      .adr-card {
+      background: #ffffff;
+      border-left: 5px solid #d32f2f;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .adr-card h5 {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+
+      .adr-card h4 {
+      color: #d32f2f;
+    }
+    </style>
+</head>
+<body>
+   
+     <!-- Barra principal -->
+    <div class="main-bar">
+        <div>
+            
+        </div>
+        <div class="search">
+            <button class="btn-search">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </div>
+    <!-- Navegación -->
+ <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">
+      <img src="../Imagenes/goro2.jpg" width="60" height="30" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="introDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+            Introducción y Contexto del Sistema
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="introDropdown">
+            <li><a class="dropdown-item" href="Proposito.html">1.1 Propósito del Sistema</a></li>
+            <li><a class="dropdown-item" href="Alcance.html">1.2 Alcance y Restricciones del Sistema</a></li>
+          </ul>
+        </li>
+
+        
+        <li class="nav-item">
+          <a class="nav-link" href="involucrados.html" style="text-align: center">Involucrados y Preocupaciones</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="designDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+            Diseño Arquitectónico
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="designDropdown">
+            <li><a class="dropdown-item" href="Relacion.html">3.1 Racional Arquitectónico</a></li>
+            <li><a class="dropdown-item" href="Vistas.html">3.2 Vistas Arquitectónicas </a></li>
+          </ul>
+        </li>
+
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="implementationDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+            Implementación y Verificación
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="implementationDropdown">
+            <li><a class="dropdown-item" href="Apli.html">4.1 Aplicación de Patrones de Diseño</a></li>
+            <li><a class="dropdown-item" href="Atri.html">4.2 Atributos de Calidad y Compromisos</a></li>
+            <li><a class="dropdown-item" href="Revi.html">4.3 Revisiones de la Arquitectura</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="CorresDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+            Correspondencia de la Implementación
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="CorresDropdown">
+            <li><a class="dropdown-item" href="Vinculacion.html">5.1 Vinculación de Componentes</a></li>
+            <li><a class="dropdown-item" href="Patrones.html">5.2 Aplicación de Patrones en el Código</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="MantenimientoDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+            Mantenimiento y Evolución
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="MantenimientoDropdown">
+            <li><a class="dropdown-item" href="Pers.html">6.1 Perspectivas de Evolución Futura</a></li>
+          </ul>
+        </li>
+
+       <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="ReferenciasDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" style="text-align: center">
+            Referencias y Apéndices
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="ReferenciasDropdown">
+            <li><a class="dropdown-item" href="Glosario.html">7.1 Glosario</a></li>
+            <li><a class="dropdown-item" href="Referencias.html">7.2 Referencias</a></li>
+          </ul>
+        </li>
+    
+      </ul>
+      
+    </div>
+    
+  </div>
+  
+</nav>
+
+    <!-- Decisiones Arquitectónicas -->
+    <div class="sidebar">
+            <h5>Índice</h5>
+            <ul>
+              <li><a href="#Estrategia">Estrategia de persistencia</a></li>
+              <li><a href="#Token">Doble Token y Código de Verificación</a></li>
+              <li><a href="#Errores">Mecanismo de manejo de errores</a></li>
+              <li><a href="#ApisExternas">Mecanismo para el consumo de APIs externas</a></li>
+              <li><a href="#Migracion">Estrategia para cambio de tecnología o migración</a></li>
+              <li><a href="#IdiomasBusqueda">Mecanismo de cambio de idiomas y búsqueda</a></li>
+              <li><a href="#Reportes">Mecanismo para generación y exportación de reportes</a></li>
+              <li><a href="#Escalabilidad">Mecanismo de soporte y escalabilidad</a></li>
+              <li><a href="#RedesSociales">Mecanismo de integración con redes sociales</a></li>
+              <li><a href="#ProteccionDatos">Mecanismo de cumplimiento de regulaciones de protección de datos</a></li>
+              <li><a href="#IntegracionFusion">Mecanismo de integración y fusión de aplicaciones</a></li>
+              <li><a href="#InclusionAccesibilidad">Mecanismo de inclusión y accesibilidad</a></li>
+              <li><a href="#ModeloNegocio">Modelo de negocio basado en hardware + software</a></li>
+              <li><a href="#DocumentacionTecnica">Mecanismo de documentación técnica y funcional</a></li>
+              <li><a href="#DispositivosMultiples">Mecanismo para soportar múltiples tipos de dispositivos</a></li>
+              <li><a href="#RealidadAumentada">Mecanismo de integración de Realidad Aumentada</a></li>
+            </ul>
+          </div>
+        <div class="hero-section">
+            <h1>ADRS</h1>
+        </div>
+      <div class="info-flex">
+        <div class="info-text">
+        <!-- Card 1 -->
+         <h3 class="text-center" style="color:#d32f2f;"><b>DECISIONES ARQUITECTONICAS</b></h3>
+        <p></p>
+        <p></p>
+        <div class="adr-card" id="Estrategia">
+          <h4><b>Estrategia de persistencia de datos para el sistema de primeros auxilios.</b></h4>
+          <p><strong>Contexto:</strong> El sistema requiere almacenar y gestionar información sensible y crítica (pacientes, incidentes, síntomas, diagnósticos, registros médicos, personal de salud).
+            Se necesita garantizar integridad, seguridad, disponibilidad y recuperación de los datos.
+            Además, el sistema debe soportar múltiples usuarios concurrentes y permitir escalabilidad futura.
+          </p>
+          <p><strong>Decisión:</strong>Se decidió utilizar MySQL como motor de base de datos relacional, gestionado desde el Servidor de Aplicaciones en Java mediante DAO/ORM (Hibernate/JPA).
+            La estrategia incluye:
+            <ul>
+                <li>Definición de claves primarias, foráneas e índices para integridad y rendimiento.</li>
+                <li>Cifrado de contraseñas y datos sensibles.</li>
+                <li>Transacciones ACID para garantizar consistencia en concurrencia.</li>
+                <li>Backups automáticos (incrementales diarios, completos semanales).</li>
+                <li>Replicación para alta disponibilidad.</li>
+                <li>Uso de roles y permisos para control de acceso.</li>
+                <li>Persistencia de archivos (reportes, documentos) en almacenamiento externo, guardando solo la ruta en la base de datos.</li>
+            </ul>
+          </p>
+          <p><strong>Consecuencias:</strong> 
+            <ul>
+                <li><b>Positivo:</b> 
+                <ul>
+                    <li>Seguridad reforzada (cifrado, HTTPS, roles).</li>
+                    <li>Integridad de datos asegurada con restricciones y transacciones.</li>
+                    <li>Disponibilidad y tolerancia a fallos mediante replicación y respaldos.</li>
+                    <li>Escalabilidad para soportar mayor carga de usuarios.</li>
+                    <li>Separación clara entre lógica de negocio y persistencia con DAO/ORM.</li>
+                </ul>
+                </li>
+                <li><b>Negativo:</b> 
+                    <ul>
+                        <li>Mayor complejidad en la configuración y administración de la BD (replicación, backups).</li>
+                        <li>Costos adicionales de almacenamiento para respaldos y archivos externos.</li>
+                        <li>Dependencia tecnológica en MySQL (migrar a otro motor puede requerir esfuerzo adicional).</li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+        </div>
+        
+        <div class="adr-card" id="Token">
+          <h4><b>Estrategia de Autenticación con Doble Token y Código de Verificación</b></h4>
+          <p><strong>Contexto:</strong> El sistema gestiona información médica y personal crítica, por lo que es necesario reforzar la autenticación.
+            La autenticación tradicional con usuario y contraseña no es suficiente, ya que puede ser vulnerable a robo de credenciales.
+            Se busca una solución que combine tokens seguros para sesiones y un código de verificación dinámico como segundo factor de autenticación.
+            </p>
+          <p><strong>Decisión:</strong> Se decidió implementar un flujo de autenticación de doble token con MFA:
+            <ul>
+                <li>1.Ingreso inicial:</li>
+                <ul>
+                    <li>El usuario proporciona su usuario y contraseña.</li>
+                    <li>Si son válidos, el sistema genera un código de verificación (OTP) y lo envía al usuario (correo electrónico, SMS o app autenticadora).</li>
+                </ul>
+            </ul></p>
+            <ul>
+                <li>2.Verificación del código:</li>
+                <ul>
+                    <li>El usuario ingresa el código recibido.</li>
+                    <li>Si el código es correcto y no ha expirado, se genera el Access Token (vida corta, ej. 15 min) y el Refresh Token (vida más larga, ej. 7 días).</li>
+                </ul>
+            </ul></p>
+            <ul>
+                <li>3.Acceso a recursos:</li>
+                <ul>
+                    <li>El cliente usa el Access Token para consumir APIs seguras.</li>
+                    <li>o	Al expirar, el cliente usa el Refresh Token para solicitar un nuevo Access Token, sin reingresar usuario/contraseña, pero el Refresh Token puede invalidarse si se detecta anomalía.</li>
+                </ul>
+            </ul></p>
+            
+          <p><strong>Consecuencias:</strong> 
+           <ul>
+                <li><b>Positivo:</b> 
+                <ul>
+                    <li>Máxima seguridad: incluso si roban la contraseña, necesitan el código de verificación.</li>
+                    <li>Access Token expira rápido, reduciendo impacto de un posible robo.</li>
+                    <li>El Refresh Token permite experiencia fluida sin pedir credenciales cada vez.</li>
+                    <li>Compatible con estándares modernos de seguridad (MFA + JWT).</li>
+                </ul>
+                </li>
+                <li><b>Negativo:</b> 
+                    <ul>
+                        <li>Incrementa la complejidad técnica (gestión de códigos OTP y doble token).</li>
+                        <li>Requiere infraestructura adicional (servicio de correo/SMS o integración con apps autenticadoras).</li>
+                        <li>Puede afectar la experiencia del usuario si no se diseña bien (ej. tiempos de espera para recibir el código).</li>
+                        <li>Costos adicionales si se usan servicios de envío de SMS.</li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="adr-card" id="Errores">
+          <h4><b>Mecanismo de manejo de errores y excepciones en el sistema de primeros auxilios.</b></h4>
+          <p><strong>Contexto:</strong> El sistema interactúa con varios componentes (cliente web, servidor de aplicaciones en Java, base de datos MySQL, servicio IA opcional).
+            Durante la operación pueden presentarse fallos como:
+            <ul>
+                <li>Errores de conexión a la base de datos.</li>
+                <li>Fallos en servicios externos (ej. IA, notificaciones).</li>
+                <li>Datos inválidos enviados por los usuarios.</li>
+                <li>Excepciones no controladas en el servidor.</li>
+            </ul>
+            Es necesario un mecanismo que garantice estabilidad, trazabilidad y una buena experiencia de usuario, evitando caídas totales del sistema.
+        </p>
+          <p><strong>Decisión:</strong> Se definió una estrategia de manejo de errores centralizado, que incluye:
+            <ul>
+                <li>1.En el Servidor de Aplicaciones (Java):</li>
+                <ul>
+                    <li>Uso de try/catch globales y manejadores centralizados de excepciones (ej. @ControllerAdvice en Spring Boot).</li>
+                    <li>Clasificación de errores en:
+                        <ul>
+                            <li>Errores de cliente (400 – Bad Request, 401 – Unauthorized, 403 – Forbidden, 404 – Not Found).</li>
+                            <li>Errores de servidor (500 – Internal Server Error, 503 – Service Unavailable).</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </ul></p>
+            <ul>
+                <li>2.En la Base de Datos:</li>
+                <ul>
+                    <li>Manejo de transacciones con rollback automático en fallos.</li>
+                    <li>Validación de integridad antes de insertar/actualizar registros.</li>
+
+                </ul>
+            </ul></p>
+            <ul>
+                <li>3.En el Cliente (Web/Móvil):</li>
+                <ul>
+                    <li>Mensajes claros y comprensibles para el usuario (sin detalles técnicos).</li>
+                    <li>Reintentos automáticos en fallos temporales (ej. pérdida de conexión).</li>
+
+                </ul>
+            </ul></p>
+               <ul>
+                <li>4.Registro y Monitoreo:</li>
+                <ul>
+                    <li>Logs estructurados (ej. Log4j, SLF4J) con nivel de severidad (INFO, WARN, ERROR, FATAL).</li>
+                    <li>Alertas automáticas para errores críticos.</li>
+                    <li>Integración futura con herramientas de monitoreo (ej. ELK Stack, Grafana).</li>
+
+                </ul>
+            </ul></p>
+
+            
+          <p><strong>Consecuencias:</strong> 
+           <ul>
+                <li><b>Positivo:</b> 
+                <ul>
+                    <li>Sistema más estable y tolerante a fallos.</li>
+                    <li>Experiencia de usuario mejorada (mensajes claros, no técnicos).</li>
+                    <li>Facilita la detección y solución rápida de errores mediante logs.</li>
+                    <li>Evita pérdidas de datos al usar rollback en transacciones fallidas.</li>
+                    <li>Mejora la seguridad al no exponer detalles técnicos al cliente.</li>
+
+                </ul>
+                </li>
+                <li><b>Negativo:</b> 
+                    <ul>
+                        <li>Complejidad adicional en la configuración del manejador centralizado de errores.</li>
+                        <li>Posible sobrecarga en almacenamiento de logs si no se gestionan con rotación.</li>
+                        <li>Requiere disciplina del equipo para registrar y categorizar errores correctamente.</li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- Card 3 -->
+        <div class="adr-card" id="ApisExternas">
+            <h4><b>Mecanismo para el consumo de APIs externas en el sistema de primeros auxilios</b></h4>
+            
+            <p><strong>Contexto:</strong> 
+                El sistema puede requerir integrarse con servicios externos para enriquecer su funcionalidad, como:
+                <ul>
+                <li>Servicios de geolocalización (ej. Google Maps, OpenStreetMap) para ubicar al paciente.</li>
+                <li>Servicios de mensajería (SMS, correo, notificaciones push).</li>
+                <li>Servicios de IA externos o APIs de salud.</li>
+                </ul>
+                Dado que estos servicios son de terceros, es necesario definir cómo consumirlos de manera segura, eficiente y tolerante a fallos.
+            </p>
+
+            <p><strong>Decisión:</strong> 
+                Se decidió implementar una capa de integración para APIs externas con las siguientes características:
+                <ul>
+                <li><b>Acceso seguro:</b>
+                    <ul>
+                    <li>Uso de HTTPS para todas las comunicaciones.</li>
+                    <li>Manejo de tokens de autenticación (API Keys, OAuth2) almacenados de forma segura en el servidor.</li>
+                    </ul>
+                </li>
+                <li><b>Abstracción en el Servidor de Aplicaciones (Java):</b>
+                    <ul>
+                    <li>Implementar clientes REST dedicados (ej. con RestTemplate o WebClient en Spring Boot).</li>
+                    <li>Uso de interfaces y adaptadores para desacoplar la lógica del negocio del proveedor específico.</li>
+                    </ul>
+                </li>
+                <li><b>Manejo de errores y tolerancia a fallos:</b>
+                    <ul>
+                    <li>Reintentos automáticos en fallos temporales.</li>
+                    <li>Circuit Breaker para evitar saturar al sistema en caso de caída del servicio externo (ej. con Resilience4j).</li>
+                    <li>Mensajes claros al usuario cuando un servicio externo no esté disponible.</li>
+                    </ul>
+                </li>
+                <li><b>Control y monitoreo:</b>
+                    <ul>
+                    <li>Logs dedicados para registrar cada interacción con APIs externas.</li>
+                    <li>Métricas de rendimiento (tiempo de respuesta, disponibilidad).</li>
+                    </ul>
+                </li>
+                <li><b>Flexibilidad futura:</b>
+                    <ul>
+                    <li>Los servicios externos deben ser fácilmente sustituibles (ej. cambiar de proveedor de geolocalización sin modificar la lógica del negocio).</li>
+                    </ul>
+                </li>
+                </ul>
+            </p>
+
+            <p><strong>Consecuencias:</strong> 
+                <ul>
+                <li><b>Positivos:</b>
+                    <ul>
+                    <li>Integración sencilla con múltiples proveedores externos.</li>
+                    <li>Seguridad reforzada con tokens y HTTPS.</li>
+                    <li>Alta resiliencia gracias a estrategias de reintentos y circuit breakers.</li>
+                    <li>Escalabilidad y flexibilidad al desacoplar la lógica del negocio de las dependencias externas.</li>
+                    </ul>
+                </li>
+                <li><b>Negativos:</b>
+                    <ul>
+                    <li>Dependencia de servicios de terceros (riesgo si cambian políticas, costos o disponibilidad).</li>
+                    <li>Incremento en la complejidad del sistema (módulos de integración, manejo de tokens, fallos externos).</li>
+                    <li>Posibles costos adicionales por uso de APIs externas (ej. SMS o mapas de Google).</li>
+                    </ul>
+                </li>
+                </ul>
+            </p>
+            </div>
+
+      <div class="adr-card" id="Migracion">
+        <h4><b>Estrategia para cambio de tecnología o migración en el sistema de primeros auxilios</b></h4>
+        
+        <p><strong>Contexto:</strong> 
+            Con el crecimiento del sistema y su adopción, puede surgir la necesidad de cambiar de tecnología o migrar por motivos como:
+            <ul>
+            <li>Escalabilidad (más usuarios y datos de sensores).</li>
+            <li>Limitaciones de la tecnología actual (ej. MySQL vs. bases de datos distribuidas).</li>
+            <li>Costos de licencias o infraestructura.</li>
+            <li>Integración con nuevas plataformas (móvil, nube, IA).</li>
+            <li>Fin de soporte de versiones o librerías críticas.</li>
+            </ul>
+            Un cambio tecnológico sin planificación puede generar pérdida de datos, caídas del sistema o problemas de compatibilidad.
+        </p>
+
+        <p><strong>Decisión:</strong> 
+            Se decidió adoptar una estrategia controlada de migración tecnológica, con las siguientes pautas:
+            <ul>
+            <li><b>Evaluación previa:</b>
+                <ul>
+                <li>Análisis de riesgos, costos y beneficios antes de migrar.</li>
+                <li>Comparación de alternativas (ej. MySQL → PostgreSQL, servidor on-premise → nube).</li>
+                </ul>
+            </li>
+            <li><b>Diseño desacoplado:</b>
+                <ul>
+                <li>Arquitectura basada en capas y APIs para minimizar dependencias.</li>
+                <li>Uso de ORM (Hibernate/JPA) en la capa de persistencia para facilitar cambio de motor de BD.</li>
+                </ul>
+            </li>
+            <li><b>Migración de datos:</b>
+                <ul>
+                <li>Estrategia de ETL (Extract, Transform, Load) para trasladar información sin pérdida.</li>
+                <li>Validación de integridad y consistencia tras la migración.</li>
+                </ul>
+            </li>
+            <li><b>Migración progresiva:</b>
+                <ul>
+                <li>Uso de entornos paralelos (ej. correr MySQL y PostgreSQL al mismo tiempo mientras se valida).</li>
+                <li>Pruebas de rendimiento y seguridad en el nuevo entorno antes del cambio definitivo.</li>
+                </ul>
+            </li>
+            <li><b>Documentación y capacitación:</b>
+                <ul>
+                <li>Registrar los cambios tecnológicos.</li>
+                <li>Capacitar al equipo en la nueva tecnología para evitar errores de operación.</li>
+                </ul>
+            </li>
+            </ul>
+        </p>
+
+        <p><strong>Consecuencias:</strong> 
+            <ul>
+            <li><b>Positivos:</b>
+                <ul>
+                <li>Flexibilidad para evolucionar con nuevas tecnologías.</li>
+                <li>Mayor vida útil del sistema al no quedar atado a tecnologías obsoletas.</li>
+                <li>Mejor rendimiento y escalabilidad al adoptar plataformas más modernas.</li>
+                <li>Reduce riesgos de interrupción al usar migración progresiva y pruebas previas.</li>
+                </ul>
+            </li>
+            <li><b>Negativos:</b>
+                <ul>
+                <li>Costos adicionales (infraestructura, tiempo de migración, capacitación).</li>
+                <li>Complejidad técnica al mantener sistemas en paralelo durante la transición.</li>
+                <li>Riesgo de incompatibilidades si no se hace un análisis profundo antes del cambio.</li>
+                <li>Posible resistencia al cambio por parte del equipo.</li>
+                </ul>
+            </li>
+            </ul>
+        </p>
+        </div>
+        <div class="adr-card" id="IdiomasBusqueda">
+            <h4><b>Mecanismo de cambio de idiomas y búsqueda en el sistema móvil/web desarrollado en Flutter y Dart</b></h4>
+            
+            <p><strong>Contexto:</strong> 
+                El sistema de primeros auxilios está siendo desarrollado en Flutter con Dart como lenguaje principal.
+                Se requiere soportar múltiples idiomas en la interfaz de usuario y permitir búsquedas rápidas en los datos de pacientes, incidentes y síntomas.
+                <br>El objetivo es garantizar accesibilidad y usabilidad tanto en el frontend como en la integración con la base de datos vía APIs.
+            </p>
+
+            <p><strong>Decisión:</strong> 
+                <ul>
+                <li><b>Cambio de Idiomas (i18n en Flutter):</b>
+                    <ul>
+                    <li>Se utilizará el paquete oficial <code>flutter_localizations</code> junto con <code>intl</code>.</li>
+                    <li>Los textos estarán en archivos <code>.arb</code> (Application Resource Bundle), lo que permite manejar traducciones sin modificar el código fuente.</li>
+                    <li>El usuario podrá seleccionar manualmente el idioma o se detectará automáticamente desde la configuración del dispositivo.</li>
+                    <li>Idiomas iniciales: Español (es) e Inglés (en), con posibilidad de añadir más (ej. Portugués).</li>
+                    </ul>
+                </li>
+
+                <li><b>Búsqueda en la Aplicación:</b>
+                    <ul>
+                    <li><b>Búsqueda local en Flutter:</b> con <code>ListView</code> + <code>SearchDelegate</code> para filtrar listas de datos descargados (ej. pacientes en memoria).</li>
+                    <li><b>Búsqueda remota vía API:</b> el cliente enviará parámetros al servidor (ej. nombre, cédula, fecha de incidente), y el servidor devolverá resultados desde MySQL.</li>
+                    <li>Se usarán índices en MySQL para optimizar búsquedas y filtros avanzados en el backend.</li>
+                    <li>En caso de escalar, se evaluará integrar ElasticSearch o soluciones similares.</li>
+                    </ul>
+                </li>
+                </ul>
+            </p>
+
+            <p><strong>Consecuencias:</strong> 
+                <ul>
+                <li><b>Positivos:</b>
+                    <ul>
+                    <li>La aplicación será multi-idioma y accesible para usuarios de diferentes regiones.</li>
+                    <li>Separación clara entre lógica de negocio y traducciones, facilitando mantenimiento.</li>
+                    <li>Búsqueda eficiente tanto en datos locales como en base de datos remota.</li>
+                    <li>Escalabilidad futura gracias al uso de APIs para búsquedas complejas.</li>
+                    </ul>
+                </li>
+
+                <li><b>Negativos:</b>
+                    <ul>
+                    <li>Mayor complejidad en la gestión de archivos de traducción <code>.arb</code>.</li>
+                    <li>Necesidad de mantener sincronizadas las traducciones al agregar nuevas funcionalidades.</li>
+                    <li>Posible latencia en búsquedas remotas si la API o la red son lentas.</li>
+                    <li>Mayor carga de pruebas para verificar consistencia entre idiomas.</li>
+                    </ul>
+                </li>
+                </ul>
+            </p>
+            </div>
+            <div class="adr-card" id="Reportes">
+  <h4><b>Mecanismo para generación y exportación de reportes (Excel, PDF y otros formatos)</b></h4>
+  
+  <p><strong>Contexto:</strong> 
+    El sistema de primeros auxilios debe permitir consultar, exportar y compartir reportes con información de:
+    <ul>
+      <li>Pacientes, síntomas e incidentes registrados.</li>
+      <li>Signos vitales recolectados desde los sensores.</li>
+      <li>Estadísticas y métricas (ej. frecuencia de incidentes, diagnósticos más comunes).</li>
+    </ul>
+    Estos reportes son necesarios para:
+    <ul>
+      <li>Toma de decisiones por personal médico y administradores.</li>
+      <li>Comunicación con familiares de pacientes.</li>
+      <li>Auditorías y procesos legales.</li>
+    </ul>
+    Por lo tanto, se necesita un mecanismo flexible que soporte diferentes formatos de salida (PDF, Excel, CSV, etc.).
+  </p>
+
+  <p><strong>Decisión:</strong> 
+    <ul>
+      <li><b>En el Backend (Java + MySQL):</b>
+        <ul>
+          <li>Generación de reportes mediante librerías especializadas:</li>
+          <ul>
+            <li><code>Apache POI</code> → para Excel.</li>
+            <li><code>iText</code> o <code>JasperReports</code> → para PDF.</li>
+            <li>Exportación a <code>CSV/JSON</code> → para integraciones con otros sistemas.</li>
+          </ul>
+          <li>Exposición de reportes mediante endpoints REST (ej. <code>/reportes/incidentes?formato=pdf</code>).</li>
+        </ul>
+      </li>
+
+      <li><b>En el Frontend (Flutter/Dart):</b>
+        <ul>
+          <li>Descarga y visualización de reportes desde la API.</li>
+          <li>Uso de librerías como:</li>
+          <ul>
+            <li><code>pdf</code> y <code>printing</code> → para generar/mostrar PDFs en el móvil.</li>
+            <li><code>excel</code> → para exportar datos en hojas de cálculo locales.</li>
+          </ul>
+          <li>Los reportes podrán:</li>
+          <ul>
+            <li>Guardarse en el dispositivo.</li>
+            <li>Compartirse por correo, WhatsApp u otras apps.</li>
+          </ul>
+        </ul>
+      </li>
+
+      <li><b>Seguridad y Acceso:</b>
+        <ul>
+          <li>Solo usuarios autorizados (según rol) podrán generar o acceder a ciertos reportes.</li>
+          <li>Los reportes con datos sensibles se protegerán con contraseñas o cifrado en el caso de PDF.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+
+  <p><strong>Consecuencias:</strong> 
+    <ul>
+      <li><b>Impactos positivos:</b>
+        <ul>
+          <li>Flexibilidad al soportar múltiples formatos (PDF, Excel, CSV).</li>
+          <li>Compatibilidad con diferentes usuarios (administradores, médicos, auditores).</li>
+          <li>Integración sencilla con otras herramientas externas (ej. Excel, Google Sheets).</li>
+          <li>Mejora en la comunicación de información crítica.</li>
+        </ul>
+      </li>
+
+      <li><b>Impactos negativos:</b>
+        <ul>
+          <li>Aumento de la complejidad técnica (gestión de librerías diferentes por formato).</li>
+          <li>Posible mayor consumo de recursos en el servidor al generar reportes grandes.</li>
+          <li>Necesidad de mantener consistencia entre reportes generados en backend y frontend.</li>
+          <li>Riesgo de filtración de datos sensibles si no se asegura la descarga y el almacenamiento.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+</div>
+<div class="adr-card" id="Escalabilidad">
+  <h4><b>Mecanismo de soporte y escalabilidad para el crecimiento de usuarios en el sistema de primeros auxilios</b></h4>
+  
+  <p><strong>Contexto:</strong> 
+    El sistema puede iniciar con una base pequeña de usuarios (100), pero se proyecta un crecimiento acelerado (100,000+ en una semana).
+    Este incremento exponencial impacta en:
+    <ul>
+      <li>Carga del servidor de aplicaciones (Java).</li>
+      <li>Consultas y transacciones en la base de datos (MySQL).</li>
+      <li>Consumo de APIs externas (geolocalización, notificaciones).</li>
+      <li>Capacidad de red y almacenamiento.</li>
+    </ul>
+    Se requiere una estrategia que garantice rendimiento, disponibilidad y escalabilidad sin afectar la experiencia del usuario.
+  </p>
+
+  <p><strong>Decisión:</strong> 
+    <ul>
+      <li><b>Arquitectura escalable:</b>
+        <ul>
+          <li>Uso de balanceadores de carga (Load Balancer) para distribuir peticiones entre múltiples instancias del servidor de aplicaciones.</li>
+          <li>Implementación de contenedores (<code>Docker</code> + <code>Kubernetes</code>) para desplegar servicios de forma ágil y escalable.</li>
+        </ul>
+      </li>
+
+      <li><b>Base de datos (MySQL):</b>
+        <ul>
+          <li>Replicación maestro-esclavo para dividir carga de lectura/escritura.</li>
+          <li>Particionado o sharding en caso de crecimiento extremo.</li>
+          <li>Uso de caché (<code>Redis</code>/<code>Memcached</code>) para reducir consultas repetitivas.</li>
+        </ul>
+      </li>
+
+      <li><b>Backend (Java):</b>
+        <ul>
+          <li>Optimización de endpoints y uso de asíncronía en operaciones pesadas.</li>
+          <li>Escalado horizontal (más instancias del servidor) y vertical (mejor hardware si es necesario).</li>
+        </ul>
+      </li>
+
+      <li><b>Frontend (Flutter/Dart):</b>
+        <ul>
+          <li>Implementar paginación e <i>infinite scroll</i> en búsquedas/listados.</li>
+          <li>Reducir llamadas innecesarias a la API con caché local.</li>
+        </ul>
+      </li>
+
+      <li><b>Infraestructura:</b>
+        <ul>
+          <li>Despliegue en la nube (ej. <code>AWS</code>, <code>GCP</code>, <code>Azure</code>) con escalado automático (Auto Scaling).</li>
+          <li>Monitoreo de métricas (CPU, memoria, latencia, tiempo de respuesta).</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+
+  <p><strong>Consecuencias:</strong> 
+    <ul>
+      <li><b>Impactos positivos:</b>
+        <ul>
+          <li>El sistema podrá manejar un crecimiento masivo de usuarios sin caídas.</li>
+          <li>Escalabilidad automática gracias a la nube y contenedores.</li>
+          <li>Mejor tiempo de respuesta al usar caché y balanceo de carga.</li>
+          <li>Flexibilidad para añadir nuevas funcionalidades sin comprometer rendimiento.</li>
+        </ul>
+      </li>
+
+      <li><b>Impactos negativos:</b>
+        <ul>
+          <li>Costos de infraestructura aumentarán a medida que crece el número de usuarios.</li>
+          <li>Mayor complejidad en la administración del sistema (requiere DevOps/SRE).</li>
+          <li>Riesgo de cuellos de botella en la base de datos si no se monitorea y optimiza.</li>
+          <li>Dependencia de servicios en la nube (riesgo de costos imprevistos).</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+</div>
+
+<div class="adr-card" id="RedesSociales">
+  <h4><b>Mecanismo de integración con redes sociales en el sistema de primeros auxilios</b></h4>
+  
+  <p><strong>Contexto:</strong> 
+    El sistema puede beneficiarse de la integración con redes sociales en distintos escenarios:
+    <ul>
+      <li>Autenticación rápida de usuarios (ej. login con Google, Facebook, Apple ID).</li>
+      <li>Notificaciones y comunicación con familiares o grupos de apoyo (ej. enviar alertas de emergencia por WhatsApp, Telegram, Messenger).</li>
+      <li>Difusión de información de salud y prevención en canales oficiales (ej. página de Facebook o Twitter/X del sistema).</li>
+    </ul>
+    Se requiere definir una estrategia segura y flexible para consumir APIs de redes sociales.
+  </p>
+
+  <p><strong>Decisión:</strong> 
+    <ul>
+      <li><b>Autenticación Social (Social Login):</b>
+        <ul>
+          <li>Integrar proveedores de identidad externos (Google, Facebook, Apple).</li>
+          <li>Uso de OAuth2 / OpenID Connect para obtener permisos y validar la identidad del usuario.</li>
+          <li>Sincronizar usuarios de redes sociales con la base de datos interna del sistema.</li>
+        </ul>
+      </li>
+
+      <li><b>Comunicación y Notificaciones:</b>
+        <ul>
+          <li>Envío de alertas a contactos de apoyo a través de APIs de mensajería (ej. WhatsApp Business API, Telegram Bot API, Twilio).</li>
+          <li>Configuración de mensajes automáticos cuando se detecte un incidente de salud.</li>
+        </ul>
+      </li>
+
+      <li><b>Difusión de información (marketing/prevención):</b>
+        <ul>
+          <li>Posibilidad de conectar el sistema con redes sociales oficiales para publicar mensajes preventivos o comunicados.</li>
+          <li>Uso de programación de publicaciones desde el servidor (ej. usando APIs de Facebook Graph o Twitter API).</li>
+        </ul>
+      </li>
+
+      <li><b>Seguridad:</b>
+        <ul>
+          <li>Almacenar de forma segura tokens de acceso de redes sociales.</li>
+          <li>Solicitar únicamente los permisos mínimos necesarios.</li>
+          <li>Cumplir con las políticas de privacidad de cada red social (ej. GDPR, Meta policies).</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+
+  <p><strong>Consecuencias:</strong> 
+    <ul>
+      <li><b>Impactos positivos:</b>
+        <ul>
+          <li>Mejor experiencia de usuario con autenticación rápida mediante redes sociales.</li>
+          <li>Comunicación en tiempo real con familiares a través de canales conocidos (WhatsApp, Messenger).</li>
+          <li>Mayor alcance y visibilidad del proyecto con difusión en redes sociales.</li>
+          <li>Flexibilidad para integrar distintos proveedores gracias a OAuth2.</li>
+        </ul>
+      </li>
+
+      <li><b>Impactos negativos:</b>
+        <ul>
+          <li>Dependencia de proveedores externos (si cambian políticas o precios, el sistema debe adaptarse).</li>
+          <li>Complejidad adicional en la gestión de permisos y tokens.</li>
+          <li>Posibles costos por uso de APIs (ej. WhatsApp Business API).</li>
+          <li>Riesgo de exposición de datos si no se configuran correctamente los permisos y la seguridad.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+</div>
+
+<div class="adr-card" id="ProteccionDatos">
+  <h4><b>Mecanismo de cumplimiento de regulaciones de protección de datos en el sistema de primeros auxilios</b></h4>
+  
+  <p><strong>Contexto:</strong> 
+    El sistema almacena y procesa información altamente sensible:
+    <ul>
+      <li>Datos personales (nombre, cédula, teléfono).</li>
+      <li>Información médica (signos vitales, diagnósticos, incidentes).</li>
+      <li>Ubicación geográfica en tiempo real (GPS).</li>
+    </ul>
+    Por tanto, está sujeto a regulaciones de protección de datos como:
+    <ul>
+      <li>GDPR (Unión Europea).</li>
+      <li>HIPAA (Estados Unidos, para datos médicos).</li>
+      <li>Ley 1581 de 2012 (Colombia, protección de datos personales).</li>
+      <li>Normativas locales según país/región de despliegue.</li>
+    </ul>
+    El incumplimiento podría generar sanciones legales, pérdida de confianza y riesgos de seguridad.
+  </p>
+
+  <p><strong>Decisión:</strong> 
+    Se decidió implementar una estrategia de cumplimiento legal y técnico, que incluye:
+    <ul>
+      <li><b>Privacidad desde el diseño (Privacy by Design):</b>
+        <ul>
+          <li>Recolectar solo los datos estrictamente necesarios.</li>
+          <li>Minimizar la exposición de datos personales en reportes y APIs.</li>
+        </ul>
+      </li>
+
+      <li><b>Consentimiento informado:</b>
+        <ul>
+          <li>Solicitar aceptación explícita del usuario antes de recolectar o compartir datos.</li>
+          <li>Incluir una política de privacidad clara dentro de la app.</li>
+        </ul>
+      </li>
+
+      <li><b>Protección técnica de datos:</b>
+        <ul>
+          <li>Cifrado en tránsito (HTTPS/TLS) y en reposo (cifrado en BD).</li>
+          <li>Hash seguro para contraseñas (bcrypt/Argon2).</li>
+          <li>Roles y permisos para restringir el acceso según perfil (administrador, médico, usuario).</li>
+        </ul>
+      </li>
+
+      <li><b>Derechos del usuario:</b>
+        <ul>
+          <li>Opción de consultar, corregir o eliminar sus datos.</li>
+          <li>Posibilidad de retirar consentimiento en cualquier momento.</li>
+        </ul>
+      </li>
+
+      <li><b>Gestión de incidentes:</b>
+        <ul>
+          <li>Procedimiento para notificar al usuario y a autoridades competentes en caso de brechas de seguridad.</li>
+        </ul>
+      </li>
+
+      <li><b>Almacenamiento y retención:</b>
+        <ul>
+          <li>Definir un tiempo máximo de retención de datos según normativas.</li>
+          <li>Eliminar o anonimizar datos cuando ya no sean necesarios.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+
+  <p><strong>Consecuencias:</strong> 
+    <ul>
+      <li><b>Impactos positivos:</b>
+        <ul>
+          <li>Cumplimiento legal con normativas internacionales y locales.</li>
+          <li>Mayor confianza de los usuarios en el sistema.</li>
+          <li>Reducción de riesgos legales y sanciones.</li>
+          <li>Seguridad reforzada al aplicar cifrado y control de accesos.</li>
+        </ul>
+      </li>
+
+      <li><b>Impactos negativos:</b>
+        <ul>
+          <li>Mayor complejidad en el desarrollo (implementación de políticas de privacidad, módulos de consentimiento).</li>
+          <li>Costos adicionales en auditorías, certificaciones o asesoría legal.</li>
+          <li>Restricciones en el uso de datos para análisis avanzados si el usuario no otorga consentimiento.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+</div>
+
+<div class="adr-card" id="IntegracionFusion">
+  <h4><b>Mecanismo de integración y fusión de aplicaciones en el sistema de primeros auxilios</b></h4>
+  
+  <p><strong>Contexto:</strong> 
+    El sistema podría evolucionar hacia la integración o fusión con otras aplicaciones o servicios, por ejemplo:
+    <ul>
+      <li>Una aplicación de emergencias médicas ya existente.</li>
+      <li>Una app de seguimiento de pacientes en hospitales.</li>
+      <li>Plataformas de bienestar y salud preventiva.</li>
+    </ul>
+    La fusión puede ser necesaria por:
+    <ul>
+      <li>Sinergia tecnológica (evitar duplicación de funciones).</li>
+      <li>Expansión de usuarios (consolidar comunidades o clientes).</li>
+      <li>Optimización de costos (un solo sistema en lugar de varios).</li>
+    </ul>
+    Sin una estrategia clara, la fusión podría generar problemas de duplicación de datos, incompatibilidades tecnológicas y pérdida de trazabilidad.
+  </p>
+
+  <p><strong>Decisión:</strong> 
+    Se decidió adoptar una estrategia de fusión progresiva y basada en interoperabilidad, con los siguientes lineamientos:
+    <ul>
+      <li><b>Arquitectura modular y basada en APIs:</b>
+        <ul>
+          <li>Todas las aplicaciones involucradas deben exponer funcionalidades clave mediante APIs REST/GraphQL.</li>
+          <li>Se usará un bus de integración (API Gateway o ESB) para unificar accesos.</li>
+        </ul>
+      </li>
+
+      <li><b>Unificación de datos:</b>
+        <ul>
+          <li>Definición de un modelo de datos común para pacientes, incidentes y registros.</li>
+          <li>Uso de ETL (Extract, Transform, Load) para migrar o sincronizar bases de datos.</li>
+          <li>Evitar duplicación de información mediante identificadores únicos.</li>
+        </ul>
+      </li>
+
+      <li><b>Experiencia de usuario:</b>
+        <ul>
+          <li>Mantener una interfaz unificada en Flutter/Dart para los usuarios finales.</li>
+          <li>Posibilidad de integrar aplicaciones fusionadas en una super-app o con un sistema de Single Sign-On (SSO).</li>
+        </ul>
+      </li>
+
+      <li><b>Seguridad y cumplimiento:</b>
+        <ul>
+          <li>Tokens compartidos (OAuth2, JWT) para acceso entre aplicaciones fusionadas.</li>
+          <li>Cumplimiento con regulaciones de datos (GDPR, HIPAA, Ley 1581).</li>
+        </ul>
+      </li>
+
+      <li><b>Fusión progresiva:</b>
+        <ul>
+          <li>Etapa 1: Integración vía APIs manteniendo aplicaciones separadas.</li>
+          <li>Etapa 2: Migración gradual de datos y servicios comunes.</li>
+          <li>Etapa 3: Consolidación en una única plataforma.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+
+  <p><strong>Consecuencias:</strong> 
+    <ul>
+      <li><b>Impactos positivos:</b>
+        <ul>
+          <li>Mayor alcance y adopción al unificar usuarios y servicios.</li>
+          <li>Reducción de costos al evitar duplicación de esfuerzos.</li>
+          <li>Escalabilidad al diseñar con arquitectura modular y basada en APIs.</li>
+          <li>Posibilidad de interoperar con sistemas hospitalarios o de emergencias existentes.</li>
+        </ul>
+      </li>
+
+      <li><b>Impactos negativos:</b>
+        <ul>
+          <li>Complejidad en la integración y migración de datos.</li>
+          <li>Riesgo de incompatibilidades tecnológicas (bases de datos diferentes, lenguajes distintos).</li>
+          <li>Potencial resistencia de usuarios al cambio de plataforma.</li>
+          <li>Incremento en costos iniciales por desarrollo de APIs, migración y pruebas.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+</div>
+
+<div class="adr-card" id="InclusionAccesibilidad">
+  <h4><b>Mecanismo de inclusión y accesibilidad para personas con discapacidades en el sistema de primeros auxilios</b></h4>
+  
+  <p><strong>Contexto:</strong> 
+    El sistema será utilizado por pacientes, familiares y personal de salud.
+    Es fundamental garantizar que personas con discapacidad visual, auditiva o motora puedan interactuar con la aplicación sin barreras.
+    Además, la OMS y normativas como WCAG (Web Content Accessibility Guidelines) obligan a que los sistemas de salud sean accesibles para todos los usuarios.
+  </p>
+
+  <p><strong>Decisión:</strong> 
+    Se decidió implementar una estrategia de accesibilidad integral en la aplicación, con las siguientes medidas:
+    <ul>
+      <li><b>Usuarios con discapacidad visual (ciegos o baja visión):</b>
+        <ul>
+          <li>Uso de lectores de pantalla en Flutter (Semantics, screenReader).</li>
+          <li>Contrastes altos y modo oscuro para mejorar visibilidad.</li>
+          <li>Posibilidad de control por voz para navegar en la app.</li>
+        </ul>
+      </li>
+
+      <li><b>Usuarios con discapacidad auditiva (sordos o hipoacúsicos):</b>
+        <ul>
+          <li>Incorporación de subtítulos y transcripción automática en mensajes de voz o video.</li>
+          <li>Alertas visuales (iconos, vibración) en lugar de solo notificaciones sonoras.</li>
+          <li>Integración futura con lenguaje de señas digital (video o avatar).</li>
+        </ul>
+      </li>
+
+      <li><b>Usuarios sordomudos:</b>
+        <ul>
+          <li>Uso de texto y símbolos gráficos como alternativa principal.</li>
+          <li>Opción de comunicación mediante chat en tiempo real con contactos de apoyo.</li>
+        </ul>
+      </li>
+
+      <li><b>Usuarios con discapacidad motora:</b>
+        <ul>
+          <li>Botones grandes y bien espaciados.</li>
+          <li>Navegación simplificada (gestos mínimos).</li>
+          <li>Soporte para dispositivos de asistencia externa (ej. teclados especiales).</li>
+        </ul>
+      </li>
+
+      <li><b>Normativas y estándares:</b>
+        <ul>
+          <li>Cumplir con WCAG 2.1 AA para accesibilidad.</li>
+          <li>Pruebas con usuarios reales para validar la experiencia inclusiva.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+
+  <p><strong>Consecuencias:</strong> 
+    <ul>
+      <li><b>Impactos positivos:</b>
+        <ul>
+          <li>Mayor accesibilidad para todos los usuarios, sin importar sus limitaciones.</li>
+          <li>Cumplimiento con normativas internacionales y locales.</li>
+          <li>Incremento de confianza y reputación del sistema como herramienta inclusiva.</li>
+          <li>Posibilidad de expandir el uso de la app a un público más amplio.</li>
+        </ul>
+      </li>
+
+      <li><b>Impactos negativos:</b>
+        <ul>
+          <li>Mayor esfuerzo de diseño y desarrollo (UI/UX adaptada y pruebas de accesibilidad).</li>
+          <li>Aumento en los tiempos de desarrollo por necesidad de validaciones adicionales.</li>
+          <li>Posibles costos extra al integrar tecnologías como reconocimiento de voz o subtitulado automático.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+</div>
+
+<div class="adr-card" id="ModeloNegocio">
+  <h4><b>Modelo de negocio basado en hardware + software con servicios de suscripción</b></h4>
+  
+  <p><strong>Contexto:</strong> 
+    El sistema de primeros auxilios requiere sostenibilidad económica para garantizar mantenimiento, escalabilidad y soporte.
+    Existen múltiples enfoques de monetización en salud digital (venta de dispositivos, licenciamiento de software, suscripciones, publicidad).
+    Es necesario elegir un modelo que equilibre accesibilidad para usuarios y rentabilidad para el proyecto.
+  </p>
+
+  <p><strong>Decisión:</strong> 
+    Se decidió implementar un modelo mixto:
+    <ul>
+      <li>Venta de hardware (manilla inteligente).</li>
+      <li>Aplicación móvil gratuita con funciones básicas.</li>
+      <li>Suscripciones premium (mensuales/anuales) que incluyen:
+        <ul>
+          <li>Reportes médicos (PDF, Excel).</li>
+          <li>Monitoreo avanzado con IA.</li>
+          <li>Integración con hospitales/aseguradoras.</li>
+        </ul>
+      </li>
+      <li>Licenciamiento B2B a instituciones (clínicas, EPS, universidades, empresas).</li>
+    </ul>
+  </p>
+
+  <p><strong>Consecuencias:</strong> 
+    <ul>
+      <li><b>Impactos positivos:</b>
+        <ul>
+          <li>Flujo de ingresos diversificado (hardware, suscripciones, licencias).</li>
+          <li>Aumenta la adopción al ofrecer una versión gratuita con funciones básicas.</li>
+          <li>Escalabilidad: más usuarios pueden pagar por características avanzadas.</li>
+          <li>Posibilidad de alianzas con instituciones de salud y aseguradoras.</li>
+        </ul>
+      </li>
+
+      <li><b>Impactos negativos:</b>
+        <ul>
+          <li>Complejidad en la gestión de precios y planes.</li>
+          <li>Necesidad de infraestructura robusta para soportar usuarios masivos.</li>
+          <li>Costos adicionales de soporte técnico y marketing.</li>
+          <li>Riesgo de que usuarios de bajos recursos no puedan acceder a funciones premium.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+</div>
+
+<div class="adr-card" id="DocumentacionTecnica">
+  <h4><b>Mecanismo de documentación técnica y funcional del sistema de primeros auxilios</b></h4>
+  
+  <p><strong>Contexto:</strong> 
+    El proyecto integra hardware (manilla inteligente), software (app Flutter, backend Java/MySQL), APIs externas y requisitos legales (protección de datos).
+    La complejidad del sistema exige que tanto el equipo de desarrollo como los usuarios finales tengan documentación clara y actualizada.
+    Sin una estrategia, se corre el riesgo de tener un sistema difícil de mantener, usar o escalar.
+  </p>
+
+  <p><strong>Decisión:</strong> 
+    Se decidió implementar una estrategia de documentación en tres niveles:
+    <ol>
+      <li><b>Documentación Técnica (para desarrolladores):</b>
+        <ul>
+          <li>ADR (Architectural Decision Records) para registrar decisiones clave.</li>
+          <li>Diagramas UML (despliegue, clases, secuencia) para representar arquitectura.</li>
+          <li>Documentación del código con estándares (JavaDoc en Java, docstrings en Dart).</li>
+          <li>Repositorio central (GitHub/GitLab) con README detallado y Wiki.</li>
+        </ul>
+      </li>
+      <li><b>Documentación Funcional (para usuarios finales y stakeholders):</b>
+        <ul>
+          <li>Manual de usuario de la app (cómo registrarse, configurar contactos, recibir alertas).</li>
+          <li>Guías rápidas para instalación y uso del hardware.</li>
+          <li>Preguntas frecuentes (FAQ) y tutoriales en video.</li>
+        </ul>
+      </li>
+      <li><b>Documentación Legal y de Seguridad:</b>
+        <ul>
+          <li>Políticas de privacidad y protección de datos (GDPR, HIPAA, Ley 1581).</li>
+          <li>Protocolos de respaldo, recuperación y gestión de incidentes de seguridad.</li>
+        </ul>
+      </li>
+    </ol>
+  </p>
+
+  <p><strong>Consecuencias:</strong> 
+    <ul>
+      <li><b>Impactos positivos:</b>
+        <ul>
+          <li>Mejora la comunicación entre equipo técnico, usuarios y socios.</li>
+          <li>Facilita la mantenibilidad y evolución del sistema.</li>
+          <li>Transparencia frente a reguladores e instituciones de salud.</li>
+          <li>Reduce la curva de aprendizaje de nuevos desarrolladores y usuarios.</li>
+        </ul>
+      </li>
+
+      <li><b>Impactos negativos:</b>
+        <ul>
+          <li>Requiere tiempo y esfuerzo adicional del equipo.</li>
+          <li>Riesgo de documentación desactualizada si no se gestiona bien.</li>
+          <li>Costos adicionales si se crean materiales audiovisuales o soporte extendido.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+</div>
+
+<div class="adr-card" id="DispositivosMultiples">
+  <h4><b>Mecanismo para soportar múltiples tipos de dispositivos (móvil, tablet, computador) con interfaz adaptable</b></h4>
+  
+  <p><strong>Contexto:</strong> 
+    El sistema de primeros auxilios debe ser accesible desde diferentes dispositivos:
+    <ul>
+      <li>Celulares (uso principal, app en Flutter).</li>
+      <li>Tablets (útiles en hospitales o personal médico).</li>
+      <li>Computadores de escritorio (para administración y monitoreo).</li>
+    </ul>
+    Sin un diseño adaptable, la interfaz puede romperse o ser poco usable en pantallas con diferentes tamaños y resoluciones.
+  </p>
+
+  <p><strong>Decisión:</strong> 
+    Se decidió implementar una estrategia de diseño responsive y multiplataforma:
+    <ol>
+      <li><b>Framework principal:</b>
+        <ul>
+          <li>Uso de Flutter/Dart, que permite desplegar en Android, iOS, Web y Desktop desde una sola base de código.</li>
+        </ul>
+      </li>
+      <li><b>Ajuste de interfaz según dispositivo:</b>
+        <ul>
+          <li>Uso de MediaQuery y LayoutBuilder para adaptar tamaños de fuentes, botones y componentes.</li>
+          <li>Diseño escalable con widgets flexibles (Flexible, Expanded, Wrap, GridView).</li>
+          <li>Soporte para orientación vertical y horizontal.</li>
+        </ul>
+      </li>
+      <li><b>Soporte específico:</b>
+        <ul>
+          <li>Móviles: interfaz optimizada para uso con una sola mano, notificaciones push.</li>
+          <li>Tablets: pantallas divididas (split view) para mostrar más información en paralelo.</li>
+          <li>Escritorio/Web: menús laterales, tablas más grandes, acceso rápido a reportes.</li>
+        </ul>
+      </li>
+      <li><b>Pruebas y QA:</b>
+        <ul>
+          <li>Simuladores/emuladores de diferentes resoluciones.</li>
+          <li>Pruebas en dispositivos físicos clave (Android, iPhone, tablet, navegador web).</li>
+        </ul>
+      </li>
+    </ol>
+  </p>
+
+  <p><strong>Consecuencias:</strong> 
+    <ul>
+      <li><b>Impactos positivos:</b>
+        <ul>
+          <li>Accesibilidad en múltiples dispositivos con una sola base de código.</li>
+          <li>Mejor experiencia de usuario sin importar el tamaño de pantalla.</li>
+          <li>Reducción de costos de desarrollo al no crear apps separadas para cada plataforma.</li>
+          <li>Escalabilidad futura: fácil expansión a web/desktop si se requiere.</li>
+        </ul>
+      </li>
+
+      <li><b>Impactos negativos:</b>
+        <ul>
+          <li>Mayor complejidad en el diseño UI (hay que pensar en varios tamaños de pantalla).</li>
+          <li>Algunas funciones nativas pueden requerir adaptaciones específicas por plataforma.</li>
+          <li>Riesgo de inconsistencias visuales si no se hacen pruebas en todos los dispositivos.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+</div>
+
+<div class="adr-card" id="RealidadAumentada">
+  <h4><b>Mecanismo de integración de Realidad Aumentada en el sistema de primeros auxilios</b></h4>
+  
+  <p><strong>Contexto:</strong> 
+    El sistema busca no solo detectar emergencias, sino también asistir al usuario y al personal médico/familiar.
+    La Realidad Aumentada puede mejorar la experiencia en:
+    <ul>
+      <li>Capacitación y entrenamiento en primeros auxilios (ej. guías interactivas para RCP o uso de botiquines).</li>
+      <li>Visualización de signos vitales en tiempo real sobre un avatar o figura.</li>
+      <li>Geolocalización AR para identificar la ubicación exacta de un paciente en un entorno físico.</li>
+    </ul>
+    Sin embargo, esta funcionalidad no es crítica para el MVP inicial, sino un valor agregado en fases avanzadas.
+  </p>
+
+  <p><strong>Decisión:</strong> 
+    Se decidió que la Realidad Aumentada será incluida como módulo opcional en la aplicación, con estas características:
+    <ol>
+      <li><b>Frameworks y librerías:</b>
+        <ul>
+          <li>Uso de ARCore (Android) y ARKit (iOS) integrados en Flutter mediante paquetes como ar_flutter_plugin.</li>
+          <li>Compatibilidad con modelos 3D en USDZ/GLTF para mostrar instrucciones médicas.</li>
+        </ul>
+      </li>
+      <li><b>Aplicaciones prácticas iniciales:</b>
+        <ul>
+          <li>Tutoriales interactivos de primeros auxilios: mostrar cómo aplicar compresiones torácicas con un modelo 3D.</li>
+          <li>Simulación de emergencias para entrenamiento de estudiantes o personal de salud.</li>
+          <li>Marcadores AR para guiar a familiares en la ubicación del paciente dentro de un lugar.</li>
+        </ul>
+      </li>
+      <li><b>Despliegue progresivo:</b>
+        <ul>
+          <li>Fase 1: AR en capacitación y entrenamiento.</li>
+          <li>Fase 2: AR en visualización de datos biométricos.</li>
+          <li>Fase 3: AR en geolocalización avanzada y simulaciones de rescate.</li>
+        </ul>
+      </li>
+    </ol>
+  </p>
+
+  <p><strong>Consecuencias:</strong> 
+    <ul>
+      <li><b>Impactos positivos:</b>
+        <ul>
+          <li>Diferenciación del sistema frente a la competencia.</li>
+          <li>Mejor experiencia de usuario con interfaces intuitivas y visuales.</li>
+          <li>Utilidad en educación médica, simulaciones y entrenamiento.</li>
+          <li>Posible interés de hospitales, universidades y aseguradoras en integrarlo.</li>
+        </ul>
+      </li>
+
+      <li><b>Impactos negativos:</b>
+        <ul>
+          <li>Mayor complejidad de desarrollo e integración (ARKit/ARCore).</li>
+          <li>Requiere dispositivos compatibles (no todos los celulares soportan AR).</li>
+          <li>Aumento en consumo de batería y recursos del dispositivo.</li>
+          <li>Funcionalidad secundaria: no es crítica para la detección y alerta de emergencias.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+</div>
+
+        </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
