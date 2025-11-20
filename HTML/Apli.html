@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informe Final de Arquitectura | HelpQuick</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    /* Estilos del sidebar y del cuerpo basados en Apli.html para replicar el diseño */
+    .sidebar {
+        position: fixed;
+        top: 126px;
+        left: 1290px;
+        width: 220px;
+        max-height: 80vh;
+        overflow-y: auto;
+        background: #fffde3;
+        border: 2px solid #d32f2f;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        z-index: 1000;
+      }
+     .sidebar h5 {
+      color: #d32f2f;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 8px;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .sidebar ul li a:hover {
+      color: #d32f2f;
+    }
+
+    body {
+      background-color: #fffde7;
+    }
+
+    .navbar-nav .nav-link {
+      white-space: normal;
+      text-align: center;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .info-flex {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #fbf39e;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(211,47,47,0.10);
+      padding: 32px;
+      gap: 32px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .info-text {
+      flex: 2 1 350px;
+      min-width: 280px;
+      text-align: left; /* Alineado a la izquierda para el contenido de texto del informe */
+    }
+
+    .info-text h3, .info-text h4, .info-text h5 {
+        color: #d32f2f;
+        margin-top: 1.5rem;
+        font-weight: bold;
+    }
+
+    /* Ocultamos la imagen en los info-flex para este informe, ya que no se proporcionaron imágenes específicas */
+    .info-text img {
+      display: none;
+    }
+
+    .hero-section h1 {
+      text-align: center;
+      color: #d32f2f;
+      font-weight: bold;
+      margin-top: 30px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilos para las tablas dentro del info-flex */
+    .info-flex table {
+        width: 100%;
+        border: 1px solid #d32f2f;
+        margin-top: 15px;
+    }
+
+    .info-flex th, .info-flex td {
+        border: 1px solid #d32f2f;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .info-flex th {
+        background-color: #fce4ec; /* Fondo suave para encabezados */
+    }
+
+    @media (max-width: 900px) {
+      .info-flex {
+        flex-direction: column;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-bar">
+    <div></div>
+    <div class="search">
+      <button class="btn-search">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="sidebar">
+            <h5>Índice del Informe</h5>
+            <ul>
+              <li><a href="#resumen-ejecutivo">Resumen Ejecutivo</a></li>
+              <li><a href="#arquitectura-adoptada">Arquitectura y Justificación</a></li>
+              <li><a href="#diseno-implementacion">Diseño e Implementación</a></li>
+              <li><a href="#modularizacion">Modularización</a></li>
+              <li><a href="#evidencias">Evidencias por Actividad</a></li>
+              <li><a href="#atributos-calidad">Atributos de Calidad</a></li>
+              <li><a href="#conclusiones">Conclusiones</a></li>
+            </ul>
+          </div>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid" id="navbarSupportedContent">
+      <a class="navbar-brand">
+        <img src="../Imagenes/goro2.jpg" width="60" height="30" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" >
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="introDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Introducción y Contexto del Sistema
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="introDropdown">
+              <li><a class="dropdown-item" href="Proposito.html">1.1 Propósito del Sistema</a></li>
+              <li><a class="dropdown-item" href="Alcance.html">1.2 Alcance y Restricciones del Sistema</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="involucrados.html">Involucrados y Preocupaciones</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="designDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Diseño Arquitectónico
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="designDropdown">
+              <li><a class="dropdown-item" href="Relacion.html">3.1 Racional Arquitectónico</a></li>
+              <li><a class="dropdown-item" href="Vistas.html">3.2 Vistas Arquitectónicas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="implementationDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Implementación y Verificación
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="implementationDropdown">
+              <li><a class="dropdown-item" href="Apli.html">4.1 Aplicación de Patrones de Diseño</a></li>
+              <li><a class="dropdown-item" href="Atri.html">4.2 Atributos de Calidad y Compromisos</a></li>
+              <li><a class="dropdown-item" href="Revi.html">4.3 Revisiones de la Arquitectura</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="CorresDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Correspondencia de la Implementación
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="CorresDropdown">
+              <li><a class="dropdown-item" href="Vinculacion.html">5.1 Vinculación de Componentes</a></li>
+              <li><a class="dropdown-item" href="Patrones.html">5.2 Aplicación de Patrones en el Código</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="MantenimientoDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Mantenimiento y Evolución
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="MantenimientoDropdown">
+              <li><a class="dropdown-item" href="Pers.html">6.1 Perspectivas de Evolución Futura</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="ReferenciasDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Referencias y Apéndices
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="ReferenciasDropdown">
+              <li><a class="dropdown-item" href="Glosario.html">7.1 Glosario</a></li>
+              <li><a class="dropdown-item" href="Referencias.html">7.2 Referencias</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero-section">
+    <h1>INFORME FINAL DE ARQUITECTURA - HELPQUICK</h1>
+  </div>
+
+  <div class="info-flex">
+    <div class="info-text" id="resumen-ejecutivo">
+      <h3 style="color:#d32f2f;"><b>Resumen Ejecutivo</b></h3>
+
+      <h4>Estilos Usados</h4>
+      <p>Los estilos arquitectónicos principales son <samp>Arquitectura por Capas</samp>, <samp>Cliente-Servidor (APIs REST)</samp> y <samp>Orientada a Eventos</samp> (para la comunicación interna asíncrona). El sistema está diseñado con una fuerte <samp>Preparación a Microservicios</samp> mediante la modularización en contextos delimitados.</p>
+
+      <h4>Módulos o Funcionalidades Principales Implementadas</h4>
+      <p>El sistema implementa funcionalidades para gestionar incidentes, pacientes, síntomas y generar reportes. La arquitectura está segregada en diez servicios modulares (ej. Paciente Service, Incidente Service, Transporte Service, Usuario Service), todos accesibles a través de un API Gateway.</p>
+
+      <h4>Evidencias Demuestran Funcionamiento</h4>
+      <ul>
+        <li>Aplicación de la Arquitectura por Capas en la estructura del repositorio (C_Dominio, C_Aplicacion, C_Infraestructura).</li>
+        <li>Comunicación por Eventos con eventos clave como `PacienteCreadoEvent`.</li>
+        <li>Uso de APIs y Contratos con DTOs definidos y documentación <samp>Swagger/OpenAPI</samp>.</li>
+        <li>Implementación de Patrones de Diseño como <samp>Factory</samp> y <samp>Repository</samp>.</li>
+      </ul>
+
+      <h4>Resultado Global (Estado de Despliegue y Calidad Alcanzada)</h4>
+      <p>El diseño logró una alta <samp>Mantenibilidad</samp> gracias a la separación de responsabilidades por capas. La arquitectura está optimizada para la <samp>Escalabilidad</samp> y el <samp>Desacoplamiento</samp> mediante la modularización y el uso de eventos. Se implementó un sistema de roles y se restringió el acceso directo a la Base de Datos para la <samp>Seguridad</samp>. El estado de despliegue es una arquitectura modularizada con una ruta clara hacia la migración a Microservicios.</p>
+
+    </div>
+  </div>
+
+  <div class="info-flex">
+    <div class="info-text" id="arquitectura-adoptada">
+      <h3 style="color:#d32f2f;"><b>Arquitectura Adoptada y Justificación</b></h3>
+
+      <ul>
+        <li><samp>Capas:</samp> Para organizar el código y separar responsabilidades, aumentando la mantenibilidad y el desacoplamiento.</li>
+        <li><samp>Cliente-Servidor (APIs REST):</samp> Permite la interacción con el usuario a través de interfaces Web y Mobile, utilizando un <samp>API Gateway</samp> como punto de entrada único.</li>
+        <li><samp>Orientada a Eventos:</samp> Utilizada para el desacoplamiento y la comunicación asíncrona entre módulos, como la gestión de eventos de paciente (ej. `PacienteCreadoEvent`, `PacienteActivoEvent`).</li>
+        <li><samp>Preparación a Microservicios:</samp> La arquitectura se diseñó con <samp>10 servicios segregados</samp> (Atención, Diagnóstico, Hospital, Incidente, Paciente, Personal, Registro, Síntomas, Transporte, Usuario), cada uno con su propia base de datos SQL. Esta modularización permite la escalabilidad horizontal y facilita futuros despliegues como microservicios.</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="info-flex">
+    <div class="info-text" id="diseno-implementacion">
+      <h3 style="color:#d32f2f;"><b>Diseño e Implementación (Resumen)</b></h3>
+
+      <h4>Arquitectura por Capas</h4>
+      <ul>
+        <li><samp>Capa de Dominio:</samp> Contiene las entidades principales y las reglas de negocio.</li>
+        <li><samp>Capa de Aplicación:</samp> Contiene los casos de uso y la lógica de negocio, utilizando interfaces de repositorios.</li>
+        <li><samp>Capa de Infraestructura:</samp> Gestiona la persistencia, la conexión a la base de datos y la implementación de los repositorios.</li>
+        <li><samp>Capa de Presentación:</samp> Responsable de la interacción con el usuario (interfaces web/móvil).</li>
+      </ul>
+      <p>La estructura de carpetas/paquetes en el repositorio es: <code>src/main/java/com/helpquick/</code> con subpaquetes como <code>C_Aplicacion</code>, <code>C_Dominio</code>, <code>C_Infraestructura</code>, y <code>C_Presentacion</code>.</p>
+
+      <h4>Patrones de Diseño Aplicados</h4>
+      <p>Se aplicaron los siguientes patrones clave:</p>
+      <ul>
+        <li><samp>Factory Pattern</samp> (en <code>UsuarioFactory</code>): Abstracción y centralización de la creación de diferentes tipos de usuarios (Paciente y Personal).</li>
+        <li><samp>Repository Pattern</samp> (en <code>PacienteRepository</code>): Desacoplamiento y Testeabilidad de la capa de persistencia.</li>
+        <li><samp>Observer Pattern</samp> (en <code>PacienteEventHandler</code> y <code>MedicoObservador/ChatbotService</code>): Permite que los componentes se suscriban para recibir notificaciones de eventos (ej. <code>PacienteCreadoEvent</code>) sin acoplamiento.</li>
+      </ul>
+
+      <h4>Eventos Clave</h4>
+      <ul>
+        <li><samp>PacienteCreadoEvent:</samp> Propósito - Notificar la creación de un nuevo paciente. Productor: `PacienteService`. Consumidor/Handler: `Handlers/PacienteEventHandler`.</li>
+        <li><samp>PacienteActivoEvent:</samp> Propósito - Notificar la activación de un paciente. Productor: `PacienteService`. Consumidor/Handler: `Handlers/PacienteEventHandler`.</li>
+      </ul>
+      <p>Se utiliza el patrón de publicación/suscripción mediante un `ApplicationEventPublisher` para publicar eventos hacia el `PacienteEventHandler`.</p>
+
+      <h4>APIs y Contratos</h4>
+      <p>La documentación de APIs se gestiona con <samp>OpenAPI/Swagger</samp> en <code>src/main/java/com/helpquick/con/C_Infraestructura/Config/SwaggerConfig.java</code>.</p>
+      <h5>Endpoints Clave:</h5>
+      <ul>
+        <li><samp>Gestión de Pacientes:</samp> <code>POST /api/pacientes</code> (en <code>C_Presentacion/PacienteController.java</code>).</li>
+        <li><samp>Interacción con Chatbot:</samp> <code>POST /api/chatbot/message</code> (en <code>C_Presentacion/ChatbotController.java</code>).</li>
+        <li><samp>Mapas/Ubicación:</samp> <code>GET /api/mapa/ubicacion</code> (en <code>C_Presentacion/MapaController.java</code>).</li>
+      </ul>
+      <p>El manejo de errores recomendado es bajo el estándar <samp>RFC7807</samp> (Problem Details for HTTP APIs).</p>
+
+    </div>
+  </div>
+
+  <div class="info-flex">
+    <div class="info-text" id="modularizacion">
+      <h3 style="color:#d32f2f;"><b>Modularización (Bounded Contexts)</b></h3>
+
+      <h4>Contextos y Límites</h4>
+      <ul>
+        <li><samp>Contexto Identidad y Usuarios:</samp> (Usuario Service, Personal Service) - Gestiona autenticación, roles y permisos.</li>
+        <li><samp>Contexto Pacientes y Atención:</samp> (Paciente Service, Atención Service, Diagnóstico Service) - Maneja el historial del paciente y el flujo de la atención médica.</li>
+        <li><samp>Contexto Incidentes y Logística:</samp> (Incidente Service, Transporte Service) - Coordinación de la respuesta inicial y el traslado de recursos.</li>
+        <li><samp>Contexto Recursos y Referencia:</samp> (Hospital Service, Registro Service, Síntomas Service) - Gestión de catálogos y recursos auxiliares del sistema.</li>
+      </ul>
+      
+      <h4>APIs Internas, Configuración Externalizada y Health Checks</h4>
+      <table>
+        <tr>
+          <th>Elemento</th>
+          <th>Propósito</th>
+          <th>Ruta de la Evidencia</th>
+        </tr>
+        <tr>
+          <td>APIs Internas</td>
+          <td>Comunicación entre servicios (si hay llamadas síncronas).</td>
+          <td><code>src/main/java/com/helpquick/ C_Aplicacion/services/</code></td>
+        </tr>
+        <tr>
+          <td>Configuración Externalizada</td>
+          <td>Archivo principal con propiedades del sistema (puertos, conexión a BD).</td>
+          <td><code>src/main/resources/application.properties</code></td>
+        </tr>
+        <tr>
+          <td>Healthchecks</td>
+          <td>Implementación basada en configuración del framework.</td>
+          <td><code>src/main/resources/application.properties</code> (activación de <code>/actuator/health</code>)</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-flex">
+    <div class="info-text" id="evidencias">
+      <h3 style="color:#d32f2f;"><b>Evidencias por Actividad y Decisiones de Arquitectura (ADRs)</b></h3>
+
+      <h4>Evidencias Clave</h4>
+      <table>
+        <tr>
+          <th>Actividad</th>
+          <th>Qué se entrega como evidencia</th>
+          <th>Ubicación/Enlace</th>
+        </tr>
+        <tr>
+          <td>Arquitectura por Capas</td>
+          <td>Estructura por capas (Carpetas C_Dominio, C_Aplicacion, etc.). Conexión a BD y repositorios.</td>
+          <td><code>src/main/java/com/help/quick/C_Infraestructura</code></td>
+        </tr>
+        <tr>
+          <td>Patrones de Diseño</td>
+          <td>Rutas a clases donde se aplican (Factory, Repository, Observer).</td>
+          <td><code>C_Aplicacion/factories/UsuarioFactory.java</code></td>
+        </tr>
+        <tr>
+          <td>Comunicación por Eventos</td>
+          <td>Catálogo de eventos (`PacienteCreadoEvent`). Código de handlers.</td>
+          <td><code>C_Dominio/Eventos/PacienteCreadoEvent.java</code></td>
+        </tr>
+        <tr>
+          <td>APIs y Contratos</td>
+          <td>Archivo de configuración de Swagger/OpenAPI.</td>
+          <td><code>C_Infraestructura/Config/SwaggerConfig.java</code></td>
+        </tr>
+      </table>
+
+      <h4>Áreas de Decisión Requerida (ADRs)</h4>
+      <table>
+        <tr>
+          <th>Área de Decisión Requerida</th>
+          <th>ADR Documentado (Título)</th>
+        </tr>
+        <tr>
+          <td>Estilo arquitectónico principal</td>
+          <td>Mantenibilidad con arquitectura por capas.</td>
+        </tr>
+        <tr>
+          <td>Modularización/DDD</td>
+          <td>Escalabilidad con microservicio de IA.</td>
+        </tr>
+        <tr>
+          <td>Persistencia</td>
+          <td>Rendimiento en consultas (Optimización con índices).</td>
+        </tr>
+        <tr>
+          <td>Seguridad</td>
+          <td>Seguridad en el acceso a la BD / Autenticación y manejo de usuarios.</td>
+        </tr>
+        <tr>
+          <td>Tecnología / Evolución</td>
+          <td>Decisión de Adoptar Realidad Aumentada como Evolución del Sistema.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-flex">
+    <div class="info-text" id="atributos-calidad">
+      <h3 style="color:#d32f2f;"><b>Atributos de Calidad (NFRs) y Tácticas</b></h3>
+
+      <table>
+        <tr>
+          <th>Atributo de Calidad</th>
+          <th>Tácticas Aplicadas</th>
+        </tr>
+        <tr>
+          <td><samp>Mantenibilidad</samp></td>
+          <td>Arquitectura por Capas, Patrones de Diseño (Factory, Repository, Observer), Uso de DTOs.</td>
+        </tr>
+        <tr>
+          <td><samp>Escalabilidad</samp></td>
+          <td>Modularización (10 servicios modulares), Arquitectura Orientada a Eventos, Servicios Stateless.</td>
+        </tr>
+        <tr>
+          <td><samp>Disponibilidad</samp></td>
+          <td>Manejo de Errores consistente, Desacoplamiento de Servicio Crítico (IA opcional), Health Checks.</td>
+        </tr>
+        <tr>
+        <tr>
+          <td><samp>Desempeño</samp></td>
+          <td>Optimización de BD con índices.</td>
+        </tr>
+        <tr>
+          <td><samp>Seguridad</samp></td>
+          <td>Acceso Restringido a BD (solo capa de negocio), Autenticación y Autorización (roles/permisos), Cifrado en Tránsito (HTTPS).</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-flex">
+    <div class="info-text" id="conclusiones">
+      <h3 style="color:#d32f2f;"><b>Conclusiones y Evolución</b></h3>
+
+      <h4>Estilos Implementados y Por Qué Fueron Adecuados</h4>
+      <p>Los estilos <samp>Arquitectura por Capas</samp> y <samp>Cliente-Servidor (APIs REST)</samp> fueron la base adecuada, ya que permitieron una separación de responsabilidades clara y facilitaron la comunicación con las interfaces de usuario. La <samp>Preparación a Microservicios</samp> es el camino correcto para la escalabilidad futura.</p>
+
+      <h4>Beneficios Logrados</h4>
+      <ul>
+        <li><samp>Mantenibilidad:</samp> Alta gracias a la Arquitectura por Capas y Patrones (Factory, Repository).</li>
+        <li><samp>Escalabilidad y Desacoplamiento:</samp> Buena, lograda por la modularización por contextos delimitados y el uso de Comunicación por Eventos, que permite que los componentes evolucionen independientemente.</li>
+      </ul>
+
+      <h4>Próximos Pasos Recomendados</h4>
+      <ol>
+        <li><samp>Implementación Completa de Seguridad:</samp> Reforzar la seguridad implementando Autenticación (<samp>JWT/OAuth2</samp>) y Autorización en el API Gateway y a nivel de servicios.</li>
+        <li><samp>Transición a Microservicios y Contenerización:</samp> Completar la migración a Microservicios y desplegarlos mediante contenedores (<samp>Docker/Kubernetes</samp>) para aprovechar al máximo la escalabilidad horizontal.</li>
+      </ol>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

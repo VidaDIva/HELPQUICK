@@ -1,0 +1,237 @@
+<html><body>
+<p>Organizar en la página Web, el informe final de la arquitectura de acuerdo con lo siguiente:</p>
+<p>Juan David Sarrazola Fernández</p>
+<p>Jose Simon Atehortua Amaya</p>
+<p>Jailer Luis Cuadrado Vanegas</p>
+<p>Docente</p>
+<p>Gloria Amparo Lora Patiño</p>
+<p>CORPORACIÓN UNIVERSITARIA REMINGTON </p>
+<p>FACULTAD DE INGENIERÍA  </p>
+<p>INGENIERÍA DE SISTEMAS </p>
+<p>MEDELLÍN </p>
+<p>2025</p>
+<p>Resumen ejecutivo</p>
+<p>Estilos Usados: Los estilos arquitectónicos principales son Arquitectura por Capas, Cliente-Servidor (APIs REST) y Orientada a Eventos (para la comunicación interna asíncrona). El sistema está diseñado con una fuerte Preparación a Microservicios mediante la modularización en contextos delimitados.</p>
+<p>Módulos o Funcionalidades Principales Implementadas: El sistema implementa funcionalidades para gestionar incidentes, pacientes, síntomas y generar reportes. La arquitectura está segregada en diez servicios modulares (ej. Paciente Service, Incidente Service, Transporte Service, Usuario Service), todos accesibles a través de un API Gateway.</p>
+<p>Evidencias Demuestran Funcionamiento: El funcionamiento se demuestra a través de:</p>
+<p>La aplicación de la Arquitectura por Capas en la estructura del repositorio (C_Dominio, C_Aplicacion, C_Infraestructura).</p>
+<p>La Comunicación por Eventos con eventos clave como PacienteCreadoEvent.</p>
+<p>El uso de APIs y Contratos con DTOs definidos y documentación Swagger/OpenAPI.</p>
+<p>La implementación de Patrones de Diseño como Factory y Repository.</p>
+<p>Resultado Global (estado de despliegue y calidad alcanzada): El diseño logró una alta Mantenibilidad gracias a la separación de responsabilidades por capas. La arquitectura está optimizada para la Escalabilidad y el Desacoplamiento mediante la modularización y el uso de eventos. En términos de Seguridad, se implementó un sistema de roles y se restringió el acceso directo a la Base de Datos. El estado de despliegue es una arquitectura modularizada con una ruta clara hacia la migración a Microservicios.</p>
+<p>Arquitectura adoptada y justificación</p>
+<p>Capas: Para organizar el código y separar responsabilidades, aumentando la mantenibilidad y el desacoplamiento.  </p>
+<p>Cliente-Servidor (APIs REST): Permite la interacción con el usuario a través de interfaces Web y Mobile, utilizando un API Gateway como punto de entrada único.</p>
+<p>Orientada a Eventos (si aplica): Utilizada para el desacoplamiento y la comunicación asíncrona entre módulos, como la gestión de eventos de paciente (ej. PacienteCreadoEvent, PacienteActivoEvent).</p>
+<p>Preparación a Microservicios: La arquitectura se diseñó con 10 servicios segregados (Atención, Diagnóstico, Hospital, Incidente, Paciente, Personal, Registro, Síntomas, Transporte, Usuario), cada uno con su propia base de datos SQL. Esta modularización permite la escalabilidad horizontal y facilita futuros despliegues como microservicios.</p>
+<p>Diseño e implementación (resumen) </p>
+<p>Arquitectura por capas</p>
+<p>Capas y responsabilidades: </p>
+<p>Capa de Dominio: Contiene las entidades principales y las reglas de negocio.   </p>
+<p>Capa de Aplicación: Contiene los casos de uso y la lógica de negocio, utilizando interfaces de repositorios definidas en la capa de infraestructura.   </p>
+<p>Capa de Infraestructura: Gestiona la persistencia, la conexión a la base de datos y la implementación de los repositorios para operaciones CRUD.   </p>
+<p>Capa de Presentación: Responsable de la interacción con el usuario (interfaces web/móvil).</p>
+<p>Estructura de carpetas/paquetes en el repositorio: src/main/java/com/helpquick/ con subpaquetes como C_Aplicacion, C_Dominio, C_Infraestructura, y C_Presentacion.   </p>
+<p>Patrones de diseño aplicados</p>
+<p>Factory Pattern: Para la creación de diferentes tipos de usuarios (Paciente y Personal). </p>
+<p>Beneficio: </p>
+<p>Abstracción y Centralización de la Creación: Centraliza el proceso de creación de objetos en un único lugar, ocultando la lógica de inicialización compleja de las clases concretas (Paciente, Personal) del código cliente.   </p>
+<p>Repository Pattern: Para la abstracción de la persistencia de entidades (ej. Paciente). </p>
+<p>Beneficio:</p>
+<p>Desacoplamiento y Testeabilidad: Desacopla la Capa de Aplicación de los detalles específicos de la Capa de Infraestructura. Esto facilita las pruebas unitarias al poder simular (mockear) fácilmente la capa de persistencia.</p>
+<p>Observer Pattern: Para implementar un sistema de notificaciones donde el PacienteEventHandler actúa como observable y servicios como MedicoObservador o ChatbotService como observadores.</p>
+<p>Beneficio: </p>
+<p>Desacoplamiento y Flexibilidad: Permite que los componentes (MedicoObservador, ChatbotService) se suscriban para recibir notificaciones de un objeto (el Handler) sin que el objeto observable necesite saber nada sobre ellos.</p>
+<p>Patrones (2–3): [Nombre del patrón] en [archivo/clase] — beneficio: [breve].</p>
+<p>Factory Pattern en UsuarioFactory/PersonalFactory/PacienteFactory</p>
+<p>Beneficio: Abstracción de la lógica de creación de diferentes tipos de usuarios (Paciente y Personal).</p>
+<p>Repository Pattern en PacienteRepository</p>
+<p>	Beneficio: Abstracción de la Persistencia de entidades (ej. Paciente).</p>
+<p>Observer Pattern en PacienteEventHandler y MedicoObservador/ChatbotService</p>
+<p>Beneficio: Desacoplamiento del sistema de notificaciones.   </p>
+<p>Eventos clave (2–4): [Nombre] — propósito — productor/consumidor.</p>
+<p>PacienteCreadoEvent: Propósito - Notificar la creación de un nuevo paciente. Productor: PacienteService. ---- Consumidor/Handler: Handlers/PacienteEventHandler.   </p>
+<p>PacienteActivoEvent: Propósito - Notificar la activación de un paciente. Productor: PacienteService. ---- Consumidor/Handler: Handlers/PacienteEventHandler.   </p>
+<p>Broker usado: [Kafka/RabbitMQ/otro] — configuración básica: [ruta]</p>
+<p>Broker Usado: No especificado, pero se utiliza el patrón de publicación/suscripción mediante un ApplicationEventPublisher para publicar eventos hacia el PacienteEventHandler.</p>
+<p>APIs y contratos:</p>
+<p>OpenAPI/Swagger: src/main/java/com/helpquick/con/C_Infraestructura/Config/SwaggerConfig.java   </p>
+<p>Endpoints clave (2–3) y manejo de errores (RFC7807 o similar).</p>
+<p>Gestión de Pacientes: Endpoints definidos en C_Presentacion/PacienteController.java</p>
+<p>Ejemplo: POST /api/pacientes (Para registrar un paciente)</p>
+<p>Interacción con Chatbot: Endpoints definidos en C_Presentacion/ChatbotController.java</p>
+<p>Ejemplo: POST /api/chatbot/message (Para enviar un mensaje)</p>
+<p>Mapas/Ubicación: Endpoints definidos en C_Presentacion/MapaController.java</p>
+<p>Ejemplo: GET /api/mapa/ubicacion (Para obtener información de ubicación)</p>
+<p>Manejo de Errores: Se recomienda utilizar el estándar RFC7807 (Problem Details for HTTP APIs) o un esquema de respuesta de errores propio para asegurar consistencia en las respuestas de la API.</p>
+<p>Modularización (bounded contexts)</p>
+<p>Contextos y límites:</p>
+<p>Contexto Identidad y Usuarios: Usuario Service, Personal Service. Se encargan de gestionar la autenticación, los roles y permisos.</p>
+<p>Contexto Pacientes y Atención: Paciente Service, Atención Service, Diagnóstico Service. Se maneja el hsitorial del paciente y el flujo de la atención médica.</p>
+<p>Contexto Incidentes y Logística: Incidente Service, Transporte Service. Coordinación de la respuesta inicial y el traslado de recursos.</p>
+<p>Contexto Recursos y Referencia: Hospital Service, Registro Service, Síntomas Service. Gestión de catálogos y recursos auxiliares del sistema. </p>
+<p>APIs internas, configuración externalizada y health checks:</p>
+<p>Evidencias por actividad</p>
+<p>ADRs incluidos</p>
+<p>Atributos de calidad (NFRs) y tácticas</p>
+<p>Conclusiones</p>
+<p>Estilos implementados y por qué fueron adecuados: Los estilos Arquitectura por Capas y Cliente-Servidor (APIs REST) fueron la base adecuada para el sistema, ya que permitieron una separación de responsabilidades clara (Dominio, Aplicación, Infraestructura) y facilitaron la comunicación con las interfaces de usuario (Web/Mobile). La Preparación a Microservicios mediante la modularización en 10 servicios es el camino correcto para la escalabilidad futura.</p>
+<p>Beneficios logrados (mantenibilidad, escalabilidad, desacoplamiento): Se logró una alta Mantenibilidad gracias a la Arquitectura por Capas y la aplicación de Patrones (Factory, Repository). El sistema presenta una buena Escalabilidad al estar modularizado por contextos delimitados y al usar Comunicación por Eventos, que garantiza el Desacoplamiento entre componentes, permitiendo que evolucionen de forma independiente.</p>
+<p>Próximos pasos recomendados (1–2 acciones):</p>
+<p>Implementación Completa de Seguridad: Reforzar la seguridad implementando Autenticación (JWT/OAuth2) y Autorización en el API Gateway y a nivel de servicios.</p>
+<p>Transición a Microservicios y Contenerización: Completar la migración a un entorno de Microservicios y desplegarlos mediante contenedores (Docker/Kubernetes) para aprovechar al máximo la escalabilidad horizonta</p>
+<table border='1' style='border-collapse:collapse;'>
+<tr>
+<td>Elemento</td>
+<td>Propósito</td>
+<td>Ruta de la Evidencia</td>
+</tr>
+<tr>
+<td>APIs Internas (Comunicación entre servicios)</td>
+<td>Aunque la comunicación principal es por eventos, si hubiera llamadas síncronas entre módulos, se definirían en la capa de Aplicación.</td>
+<td>src/main/java/com/helpquick/ C_Aplicacion/services/ 
+
+(Donde se inyectaría un cliente REST para la comunicación)</td>
+</tr>
+<tr>
+<td>Configuración Externalizada</td>
+<td>Archivo principal que contiene las propiedades del sistema (puertos, conexión a BD, entre otras.).</td>
+<td>src/main/resources/application.properties</td>
+</tr>
+<tr>
+<td>Healthchecks</td>
+<td>La implementación se basa en la configuración del framework.</td>
+<td>src/main/resources/application.properties 
+
+(Donde se activan los endpoints 
+/actuator/health)</td>
+</tr>
+</table><br>
+<table border='1' style='border-collapse:collapse;'>
+<tr>
+<td>Actividad</td>
+<td>Qué se entrega como evidencia</td>
+<td>Ubicación/Enlace (repo/URL/archivo)</td>
+</tr>
+<tr>
+<td>Entregable 1: Arquitectura por Capas</td>
+<td>Estructura por capas en el repo: Carpetas C_Dominio, C_Aplicacion,C_Infraestructura, C_Presentacion.
+Diagramas C4 (Contexto/Contenedores/Component es).
+Conexión a BD y repositorios.
+Pruebas unitarias básicas de servicios/repositorios.</td>
+<td>src/main/java/com/help/quick/C_Infraestructura
+No se generó un archivo C4 específico, o no se tiene la ruta
+src/main/java/com/help/quick/C_Dominio
+Servicos:src/main/java/com/help/quick/C_Aplicacion/Services
+Repositorios:
+src/main/java/com/help/quick/C_Infraestructura/repositories</td>
+</tr>
+<tr>
+<td>Entregable 2: Patrones de Diseño</td>
+<td>
+Documento breve con patrones elegidos y justificación.
+Rutas a clases donde se aplican.
+Pruebas de comportamiento que los usan.</td>
+<td>
+C_Aplicacion/factories/UsuarioFactory.java (Para Factory Pattern) 
+C_Infraestructura/repositories/PacienteRepository.java (Para Repository Pattern)
+C_Infraestructura/Observers/Observador.java (Para Observer Pattern)
+No tenemos.</td>
+</tr>
+<tr>
+<td>Entregable 3: Comunicación por Eventos</td>
+<td>
+Catálogo de eventos (nombre, esquema, versión, productor/consumidor).
+Código de productores/consumidores/handlers.
+Configuración de broker y evidencia (logs/capturas).</td>
+<td>C_Dominio/Eventos/PacienteCreadoEvent.java y PacienteActivoEvent.java
+C_Infraestructura/Handlers/PacienteEventHandler.java
+Ej: Clase del PacienteService donde se publica el evento.
+Pantallazo del código “Creo”</td>
+</tr>
+<tr>
+<td>Entregable 4: APIs y
+Contratos</td>
+<td>Archivo/URL</td>
+<td>C_Infraestructura/Config/SwaggerConfig.java
+</td>
+</tr>
+</table><br>
+<table border='1' style='border-collapse:collapse;'>
+<tr>
+<td>Área de Decisión Requerida</td>
+<td>ADR Documentado (Título en Vistas.html / NuevaV.html)</td>
+</tr>
+<tr>
+<td>Estilo arquitectónico principal (Capas + EDA)</td>
+<td>Mantenibilidad con arquitectura por capas: Decisión de adoptar una arquitectura por capas separando responsabilidades.</td>
+</tr>
+<tr>
+<td>Modularización/DDD (bounded contexts)</td>
+<td>Escalabilidad con microservicio de IA: Decisión de desplegar la IA como un microservicio independiente vía API.</td>
+</tr>
+<tr>
+<td>Persistencia (DB, modelo, migraciones)</td>
+<td>Rendimiento en consultas: Decisión de optimizar la BD con índices en campos de búsqueda frecuentes.</td>
+</tr>
+<tr>
+<td>APIs (versionado, errores estándar)</td>
+<td>[Pendiente de ADR específico]</td>
+</tr>
+<tr>
+<td>Seguridad (authn/authz, secretos, TLS)</td>
+<td>Seguridad en el acceso a la BD: Decisión de que solo la capa de negocio acceda a la BD.</td>
+</tr>
+<tr>
+<td></td>
+<td>Autenticación y manejo de usuarios: Decisión de implementar autenticación con roles y permisos.</td>
+</tr>
+<tr>
+<td>Tecnología / Evolución</td>
+<td>Decisión de Adoptar Realidad Aumentada como Evolución del Sistema: (Inclusión de AR para entrenamiento, visualización de datos y geolocalización).</td>
+</tr>
+<tr>
+<td>Eventos (broker, idempotencia, DLQ)</td>
+<td>[Pendiente de ADR específico]</td>
+</tr>
+<tr>
+<td>Observabilidad (logs, métricas, trazas)</td>
+<td>[Pendiente de ADR específico]</td>
+</tr>
+<tr>
+<td>Despliegue (contenedores, probes, config externa)</td>
+<td>[Cubierto por el ADR de Microservicio de IA]</td>
+</tr>
+</table><br>
+<table border='1' style='border-collapse:collapse;'>
+<tr>
+<td>Atributo de Calidad</td>
+<td>Tácticas Aplicadas (Basadas en Evidencia)</td>
+</tr>
+<tr>
+<td>Mantenibilidad</td>
+<td>Arquitectura por Capas (Separación de Responsabilidades): El sistema se organiza en capas (C_Dominio, C_Aplicacion, C_Infraestructura) para aislar la lógica de negocio de la presentación y la persistencia. Patrones de Diseño: Uso de Factory Pattern, Repository Pattern y Observer Pattern para gestionar la complejidad y el desacoplamiento. Uso de DTOs: Para definir contratos de datos estables entre capas y servicios.</td>
+</tr>
+<tr>
+<td>Escalabilidad</td>
+<td>Modularización: La arquitectura está preparada para Microservicios (10 servicios modulares), facilitando el escalado horizontal de servicios individuales. Orientada a Eventos: El uso de eventos (PacienteCreadoEvent) desacopla a productores y consumidores, permitiendo que crezcan a diferentes ritmos. Servicios Stateless: Implícito en la arquitectura de servicios y el uso de API Gateway.</td>
+</tr>
+<tr>
+<td>Disponibilidad</td>
+<td>Manejo de Errores: Implementación de manejo de errores consistente en los Controllers. Desacoplamiento de Servicio Crítico: El Servicio IA es opcional, lo que permite que el sistema principal siga funcionando si este microservicio falla (táctica de &quot;tolerancia a fallos&quot;). Health Checks: Uso de probes de salud (implícito en la recomendación de despliegue) para que el orquestador sepa si el servicio está disponible.</td>
+</tr>
+<tr>
+<td>Desempeño</td>
+<td>Optimización de BD: Optimización de la base de datos con índices en campos de búsqueda frecuentes para mejorar el rendimiento en consultas. Tácticas Adicionales: [Caching, Paginación/Filtrado] (a implementar).
+</td>
+</tr>
+<tr>
+<td>Seguridad</td>
+<td>Acceso Restringido a BD: Solo la capa de negocio (C_Dominio/C_Aplicacion) tiene acceso directo a la Base de Datos. Autenticación y Autorización: Implementación de un sistema de roles y permisos para limitar accesos. Cifrado en Tránsito: Uso de HTTPS para la comunicación entre Cliente y Servidor.</td>
+</tr>
+<tr>
+<td>Observabilidad</td>
+<td>Tácticas Base: [Logs estructurados, Métricas, Trazas] (A implementar).</td>
+</tr>
+</table><br>
+</body></html>
